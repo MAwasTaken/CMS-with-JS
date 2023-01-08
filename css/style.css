@@ -76,7 +76,7 @@ table {
   padding: 0 1rem;
 }
 .top-bar .container-fluid .top-bar__content .top-bar__right .top-bar__menu .top-bar__item .top-bar__link:hover {
-  color: #0652DD;
+  color: #1e83f0;
 }
 .top-bar .container-fluid .top-bar__content .top-bar__left {
   display: flex;
@@ -129,12 +129,70 @@ html body a {
   transition: all 400ms ease;
 }
 html body a:hover {
-  color: #0652DD;
+  color: #1e83f0;
 }
 html body i {
   user-select: none;
 }
 
 /* Finish Default Styles */
+/* Start Navbar Styles*/
+.main-header__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 1.5rem;
+}
+.main-header__content .main-header__left {
+  display: flex;
+  align-items: center;
+}
+.main-header__content .main-header__left .main-header__search-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.3rem;
+  height: 4.3rem;
+  border-radius: 0.5rem;
+  background-color: #2bce56;
+}
+.main-header__content .main-header__left .main-header__search-btn .main-header__search-icon {
+  color: #fff;
+  font-size: 2.2rem;
+}
+.main-header__content .main-header__left .main-header__cart-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.3rem;
+  height: 4.3rem;
+  border-radius: 0.5rem;
+  margin-right: 1rem;
+  background-color: #f0f2f7;
+}
+.main-header__content .main-header__left .main-header__cart-btn .main-header__cart-icon {
+  color: #464749;
+  font-size: 2.2rem;
+  transition: all 0.4s ease;
+}
+.main-header__content .main-header__left .main-header__cart-btn:hover .main-header__cart-icon {
+  color: #1e83f0;
+}
+.main-header__content .main-header__left .main-header__profile {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 1.5rem;
+  border: 2px solid #2bce56;
+  border-radius: 0.5rem;
+  margin-right: 1rem;
+  transition: all 0.4s ease;
+  color: #2bce56;
+}
+.main-header__content .main-header__left .main-header__profile:hover {
+  background-color: #2bce56;
+  color: #fff;
+}
+
+/* Finish Navbar Styles*/
 
 /*# sourceMappingURL=style.css.map */
