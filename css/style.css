@@ -136,7 +136,7 @@ html body i {
 }
 
 /* Finish Default Styles */
-/* Start Navbar Styles*/
+/* Start Navbar Styles */
 .main-header__content {
   display: flex;
   align-items: center;
@@ -162,11 +162,11 @@ html body i {
   justify-content: center;
   position: relative;
 }
-.main-header__content .main-header__right .main-header__menu .main-header__item .main-header__link .main-header__link-icon {
-  margin-right: 1rem;
-}
 .main-header__content .main-header__right .main-header__menu .main-header__item .main-header__link:hover {
   color: #7f8187;
+}
+.main-header__content .main-header__right .main-header__menu .main-header__item .main-header__link .main-header__link-icon {
+  margin-right: 1rem;
 }
 .main-header__content .main-header__right .main-header__menu .main-header__item .main-header__dropdown {
   position: absolute;
@@ -250,6 +250,50 @@ html body i {
   color: #fff;
 }
 
-/* Finish Navbar Styles*/
+/* Finish Navbar Styles */
+/* Start Landing Styles */
+.landing {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/background_landing.png) no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  text-align: center;
+  padding: 9rem 0;
+  color: #fff;
+}
+.landing .landing__title {
+  font-size: 3.4rem;
+  font-weight: bold;
+}
+.landing .landing__subtitle {
+  font-size: 1.8rem;
+  margin-top: 0.3rem;
+}
+.landing .landing__searchbar {
+  width: 700px;
+  position: relative;
+  margin: 3.5rem auto;
+}
+.landing .landing__searchbar .landing__searchbar-input {
+  width: 100%;
+  padding: 2.5rem;
+  border: none;
+  border-radius: 1rem;
+}
+.landing .landing__searchbar .landing__searchnar-btn {
+  border: none;
+  background-color: #2bce56;
+  position: absolute;
+  left: 1rem;
+  width: 6rem;
+  top: 0.7rem;
+  height: 6rem;
+  border-radius: 1rem;
+}
+.landing .landing__searchbar .landing__searchnar-btn .landing__search-icon {
+  font-size: 2.8rem;
+  color: #fff;
+}
+
+/* Finish Landing Styles */
 
 /*# sourceMappingURL=style.css.map */

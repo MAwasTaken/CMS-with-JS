@@ -28,10 +28,10 @@ html {
             text-decoration: none;
             color: $dark-color;
             transition: all 400ms ease;
-        }
 
-        a:hover {
-            color: #1e83f0;
+            &:hover {
+                color: #1e83f0;
+            }
         }
 
         i {
@@ -42,7 +42,7 @@ html {
 
 /* Finish Default Styles */
 
-/* Start Navbar Styles*/
+/* Start Navbar Styles */
 
 .main-header__content {
     display: flex;
@@ -69,13 +69,13 @@ html {
                     justify-content: center;
                     position: relative;
 
+                    &:hover {
+                        color: #7f8187;
+                    }
+
                     .main-header__link-icon {
                         margin-right: 1rem;
                     }
-                }
-
-                .main-header__link:hover {
-                    color: #7f8187;
                 }
 
                 .main-header__dropdown {
@@ -94,28 +94,28 @@ html {
                     opacity: 0;
                     visibility: hidden;
 
-                    .main-header__dropdown-link{
+                    .main-header__dropdown-link {
                         display: block;
                         padding: .6rem 2rem;
                         font-size: 1.4rem;
                         color: $dark-color;
                         transition: all .4s ease;
-                    }
 
-                    .main-header__dropdown-link:hover{
-                        color: #1e83f0;
+                        &:hover {
+                            color: #1e83f0;
+                        }
                     }
                 }
-            }
 
-            .main-header__item:hover .main-header__dropdown{
-                opacity: 1;
-                visibility: visible;
-                top: 6.5rem;
+                &:hover .main-header__dropdown {
+                    opacity: 1;
+                    visibility: visible;
+                    top: 6.5rem;
+                }
             }
         }
     }
-    
+
 
     .main-header__left {
         display: flex;
@@ -151,10 +151,10 @@ html {
                 font-size: 2.2rem;
                 transition: all .4s ease;
             }
-        }
 
-        .main-header__cart-btn:hover .main-header__cart-icon {
-            color: #1e83f0;
+            &:hover .main-header__cart-icon {
+                color: #1e83f0;
+            }
         }
 
         .main-header__profile {
@@ -167,15 +167,67 @@ html {
             transition: all .4s ease;
             color: $primary-color;
             height: 4.3rem;
-        }
 
-        .main-header__profile:hover {
-            background-color: $primary-color;
-            color: $white-color;
+            &:hover {
+                background-color: $primary-color;
+                color: $white-color;
+            }
         }
     }
 }
 
-/* Finish Navbar Styles*/
+/* Finish Navbar Styles */
+
+/* Start Landing Styles */
+
+.landing {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/background_landing.png) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+    padding: 9rem 0;
+    color: $white-color;
+
+    .landing__title {
+        font-size: 3.4rem;
+        font-weight: bold;
+    }
+
+    .landing__subtitle {
+        font-size: 1.8rem;
+        margin-top: 0.3rem;
+    }
+
+    .landing__searchbar {
+        width: 700px;
+        position: relative;
+        margin: 3.5rem auto;
+
+        .landing__searchbar-input {
+            width: 100%;
+            padding: 2.5rem;
+            border: none;
+            border-radius: 1rem;
+        }
+
+        .landing__searchnar-btn {
+            border: none;
+            background-color: $primary-color;
+            position: absolute;
+            left: 1rem;
+            width: 6rem;
+            top: 0.7rem;
+            height: 6rem;
+            border-radius: 1rem;
+
+            .landing__search-icon {
+                font-size: 2.8rem;
+                color: $white-color;
+            }
+        }
+    }
+}
+
+/* Finish Landing Styles */
 
 //  sass --watch sass/index.scss css/style.css
