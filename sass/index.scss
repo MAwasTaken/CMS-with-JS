@@ -256,4 +256,45 @@ html {
 
 /* Finish Landing Styles */
 
+/* Start Latest Courses Styles */
+
+.courses {
+    margin: 4rem 0;
+
+    .courses-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .courses-header__right {
+            display: flex;
+            flex-direction: column;
+
+            .courses-header__text {
+                color: #9c9c9c;
+                font-size: 1.5rem;
+            }
+        }
+
+        .courses-header__left {
+            .courses-header__link {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: $white-color;
+                background-color: $primary-color;
+                padding: 0.5rem 1rem;
+                border-radius: 0.5rem;
+            }
+
+            .courses-header__icon {
+                margin-right: 0.5rem;
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+/* Finish Latest Courses Styles */
+
 //  sass --watch sass/index.scss css/style.css

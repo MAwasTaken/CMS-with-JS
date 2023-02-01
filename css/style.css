@@ -317,5 +317,37 @@ html body i {
 }
 
 /* Finish Landing Styles */
+/* Start Latest Courses Styles */
+.courses {
+  margin: 4rem 0;
+}
+.courses .courses-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.courses .courses-header .courses-header__right {
+  display: flex;
+  flex-direction: column;
+}
+.courses .courses-header .courses-header__right .courses-header__text {
+  color: #9c9c9c;
+  font-size: 1.5rem;
+}
+.courses .courses-header .courses-header__left .courses-header__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: #2bce56;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+.courses .courses-header .courses-header__left .courses-header__icon {
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+}
+
+/* Finish Latest Courses Styles */
 
 /*# sourceMappingURL=style.css.map */
