@@ -23,10 +23,10 @@
                             transition: all .4s ease;
                             font-size: 1.5rem;
                             padding: 0 1rem;
-                        }
 
-                        .top-bar__link:hover{
-                            color: #1e83f0;
+                            &:hover {
+                                color: #1e83f0;
+                            }
                         }
                     }
                 }

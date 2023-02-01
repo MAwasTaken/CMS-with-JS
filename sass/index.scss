@@ -1,9 +1,8 @@
-@import 'reset';
-@import 'variables';
-@import 'fonts';
-@import 'responsive';
-@import 'top-bar';
-
+@import "reset";
+@import "variables";
+@import "fonts";
+@import "responsive";
+@import "top-bar";
 
 /* Start Default Styles */
 
@@ -84,9 +83,9 @@ html {
                     left: 0;
                     right: 0;
                     background-color: $white-color;
-                    transition: all .2s ease-in-out;
-                    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .12);
-                    border-radius: .5rem;
+                    transition: all 0.2s ease-in-out;
+                    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.12);
+                    border-radius: 0.5rem;
                     width: 24rem;
                     z-index: 1;
                     padding: 1rem 0;
@@ -96,10 +95,10 @@ html {
 
                     .main-header__dropdown-link {
                         display: block;
-                        padding: .6rem 2rem;
+                        padding: 0.6rem 2rem;
                         font-size: 1.4rem;
                         color: $dark-color;
-                        transition: all .4s ease;
+                        transition: all 0.4s ease;
 
                         &:hover {
                             color: #1e83f0;
@@ -116,7 +115,6 @@ html {
         }
     }
 
-
     .main-header__left {
         display: flex;
         align-items: center;
@@ -127,7 +125,7 @@ html {
             justify-content: center;
             width: 4.3rem;
             height: 4.3rem;
-            border-radius: .5rem;
+            border-radius: 0.5rem;
             background-color: $primary-color;
 
             .main-header__search-icon {
@@ -142,14 +140,14 @@ html {
             justify-content: center;
             width: 4.3rem;
             height: 4.3rem;
-            border-radius: .5rem;
+            border-radius: 0.5rem;
             margin-right: 1rem;
             background-color: #f0f2f7;
 
             .main-header__cart-icon {
                 color: $dark-color;
                 font-size: 2.2rem;
-                transition: all .4s ease;
+                transition: all 0.4s ease;
             }
 
             &:hover .main-header__cart-icon {
@@ -160,11 +158,11 @@ html {
         .main-header__profile {
             display: flex;
             align-items: center;
-            padding: .6rem 1.5rem;
+            padding: 0.6rem 1.5rem;
             border: 2px solid $primary-color;
-            border-radius: .5rem;
+            border-radius: 0.5rem;
             margin-right: 1rem;
-            transition: all .4s ease;
+            transition: all 0.4s ease;
             color: $primary-color;
             height: 4.3rem;
 
@@ -181,7 +179,8 @@ html {
 /* Start Landing Styles */
 
 .landing {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/background_landing.png) no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url(../images/background_landing.png) no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
     text-align: center;
@@ -223,6 +222,33 @@ html {
             .landing__search-icon {
                 font-size: 2.8rem;
                 color: $white-color;
+            }
+        }
+    }
+
+    .landing-status {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        .landing-status__item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            svg {
+                fill: $white-color;
+            }
+
+            .landing-status__count {
+                font-weight: bold;
+                font-size: 2rem;
+                margin-top: 0.5rem;
+            }
+
+            .landing-status__text {
+                font-weight: bold;
             }
         }
     }
