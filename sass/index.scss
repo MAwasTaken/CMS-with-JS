@@ -63,7 +63,7 @@ html {
             transition: all 400ms ease;
 
             &:hover {
-                color: #1e83f0 !important;
+                color: #1e83f0;
             }
         }
 
@@ -423,16 +423,45 @@ html {
                 justify-content: center;
                 color: $primary-color;
                 font-size: 1.5rem;
+                text-decoration: none;
+                transition: all 400ms ease;
 
                 .course-box__footer-icon {
                     margin-right: 0.5rem;
                     font-size: 1.8rem;
                 }
+                
+                &:hover {
+                    color: #1e83f0 !important;
+                }
             }
+
         }
     }
 }
 
 /* Finish Latest Courses Styles */
+
+/* Start About Us Styles */
+
+.about-us {
+    margin: 6rem 0;
+
+    .about-us__header {
+        display: flex;
+        flex-direction: column;
+
+        .about-us__title {
+            @extend %title;
+        }
+
+        .about-us__subtitle {
+            color: #9c9c9c;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+/* Finish About Us Styles */
 
 //  sass --watch sass/index.scss css/style.css
