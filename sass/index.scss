@@ -490,4 +490,32 @@ html {
 
 /* Finish About Us Styles */
 
+/* Start Popular Courses Styles */
+
+.popular {
+    margin: 4rem 0;
+
+    .popular__header {
+        .popular__header-title {
+            @extend %title;
+        }
+    }
+}
+
+/* Finish Popular Courses Styles */
+
+/* Start Pre-sell Courses Styles */
+
+.presell {
+    margin: 4rem 0;
+
+    .presell__header {
+        .presell__header-title {
+            @extend %title;
+        }
+    }
+}
+
+/* Finish Pre-sell Courses Styles */
+
 //  sass --watch sass/index.scss css/style.css

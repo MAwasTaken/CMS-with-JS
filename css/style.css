@@ -106,14 +106,14 @@ table {
 
 /* Finish Top-Bar Styles */
 /* Start Helper Classes */
-.about-us .about-us__header .about-us__title, .courses .courses-header .courses-header__right .courses-header__title {
+.presell .presell__header .presell__header-title, .popular .popular__header .popular__header-title, .about-us .about-us__header .about-us__title, .courses .courses-header .courses-header__right .courses-header__title {
   font-size: 2rem;
   color: #444446;
   font-weight: bold;
   line-height: 1.2;
   position: relative;
 }
-.about-us .about-us__header .about-us__title::before, .courses .courses-header .courses-header__right .courses-header__title::before {
+.presell .presell__header .presell__header-title::before, .popular .popular__header .popular__header-title::before, .about-us .about-us__header .about-us__title::before, .courses .courses-header .courses-header__right .courses-header__title::before {
   content: "";
   position: absolute;
   right: -1rem;
@@ -123,7 +123,7 @@ table {
   border-radius: 5rem;
   transform: rotate(8deg);
 }
-.about-us .about-us__header .about-us__title::after, .courses .courses-header .courses-header__right .courses-header__title::after {
+.presell .presell__header .presell__header-title::after, .popular .popular__header .popular__header-title::after, .about-us .about-us__header .about-us__title::after, .courses .courses-header .courses-header__right .courses-header__title::after {
   content: "";
   position: absolute;
   right: 0;
@@ -498,5 +498,15 @@ html body i {
 }
 
 /* Finish About Us Styles */
+/* Start Popular Courses Styles */
+.popular {
+  margin: 4rem 0;
+}
+/* Finish Popular Courses Styles */
+/* Start Pre-sell Courses Styles */
+.presell {
+  margin: 4rem 0;
+}
+/* Finish Pre-sell Courses Styles */
 
 /*# sourceMappingURL=style.css.map */
