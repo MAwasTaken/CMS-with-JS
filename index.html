@@ -5,6 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="vendor/FontAwesome/all.min.css" />
+        <link
+            rel="stylesheet"
+            href="vendor/SwiperSlider/swiper.css"
+        />
         <link rel="stylesheet" href="vendor/BootStrap/bootstrap.min.css" />
         <link rel="stylesheet" href="css/style.css" />
         <title>سبزلرن | صفحه اصلی</title>
@@ -998,20 +1002,30 @@
         <div class="about-us">
             <div class="container">
                 <div class="about-us__header">
-                    <span class="about-us__title">ما چه کمکی بهتون میکنیم ؟</span>
-                    <span class="about-us__subtitle">از اونجایی که آکادمی آموزشی سبزلرن یک آکادمی خصوصی هست</span>
+                    <span class="about-us__title"
+                        >ما چه کمکی بهتون میکنیم ؟</span
+                    >
+                    <span class="about-us__subtitle"
+                        >از اونجایی که آکادمی آموزشی سبزلرن یک آکادمی خصوصی
+                        هست</span
+                    >
                 </div>
                 <div class="container">
                     <div class="row">
-
                         <div class="col-6">
                             <div class="about-us__box">
                                 <div class="about-us__box-right">
-                                    <i class="far fa-copyright about-us__icon"></i>
+                                    <i
+                                        class="far fa-copyright about-us__icon"
+                                    ></i>
                                 </div>
                                 <div class="about-us__box-left">
-                                    <span class="about-us__box-title">دوره های اختصاصی</span>
-                                    <span class="about-us__box-text">با پشتیبانی و کیفیت بالا ارائه میده ! </span>
+                                    <span class="about-us__box-title"
+                                        >دوره های اختصاصی</span
+                                    >
+                                    <span class="about-us__box-text"
+                                        >با پشتیبانی و کیفیت بالا ارائه میده !
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -1021,8 +1035,13 @@
                                     <i class="fas fa-leaf about-us__icon"></i>
                                 </div>
                                 <div class="about-us__box-left">
-                                    <span class="about-us__box-title">اجازه تدریس</span>
-                                    <span class="about-us__box-text">به هر مدرسی رو نمیده. چون کیفیت براش مهمه ! </span>
+                                    <span class="about-us__box-title"
+                                        >اجازه تدریس</span
+                                    >
+                                    <span class="about-us__box-text"
+                                        >به هر مدرسی رو نمیده. چون کیفیت براش
+                                        مهمه !
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -1032,8 +1051,14 @@
                                     <i class="fas fa-gem about-us__icon"></i>
                                 </div>
                                 <div class="about-us__box-left">
-                                    <span class="about-us__box-title">دوره پولی و رایگان</span>
-                                    <span class="about-us__box-text">براش مهم نیست. به مدرسینش حقوق میده تا نهایت کیفیت رو در پشتیبانی و آپدیت دوره ارائه بده</span>
+                                    <span class="about-us__box-title"
+                                        >دوره پولی و رایگان</span
+                                    >
+                                    <span class="about-us__box-text"
+                                        >براش مهم نیست. به مدرسینش حقوق میده تا
+                                        نهایت کیفیت رو در پشتیبانی و آپدیت دوره
+                                        ارائه بده</span
+                                    >
                                 </div>
                             </div>
                         </div>
@@ -1043,12 +1068,18 @@
                                     <i class="fas fa-crown about-us__icon"></i>
                                 </div>
                                 <div class="about-us__box-left">
-                                    <span class="about-us__box-title">اهمیت به کاربر</span>
-                                    <span class="about-us__box-text">اولویت اول و آخر آکادمی آموزش برنامه نویسی سبزلرن اهمیت به کاربرها و رفع نیاز های آموزشی و رسوندن اونها به بازار کار هست</span>
+                                    <span class="about-us__box-title"
+                                        >اهمیت به کاربر</span
+                                    >
+                                    <span class="about-us__box-text"
+                                        >اولویت اول و آخر آکادمی آموزش برنامه
+                                        نویسی سبزلرن اهمیت به کاربرها و رفع نیاز
+                                        های آموزشی و رسوندن اونها به بازار کار
+                                        هست</span
+                                    >
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -1061,7 +1092,264 @@
         <div class="popular">
             <div class="container">
                 <div class="popular__header">
-                    <span class="popular__header-title">محبوب ترین دوره ها</span>
+                    <span class="popular__header-title"
+                        >محبوب ترین دوره ها</span
+                    >
+                </div>
+                <div class="popular__slider">
+                    <div class="swiper swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="course-box">
+                                    <a href="#">
+                                        <img
+                                            class="course-box__img"
+                                            src="images/courses/fareelancer.png"
+                                            alt="Course img"
+                                        />
+                                    </a>
+
+                                    <div class="course-box__main">
+                                        <a class="course-box__title" href="#"
+                                            >دوره پروژه محور متخصص جنگو</a
+                                        >
+                                        <div class="course-box__rating-teacher">
+                                            <div class="course-box__teacher">
+                                                <i
+                                                    class="fas fa-chalkboard-teacher course-box__teacher-icon"
+                                                ></i>
+                                                <a
+                                                    class="course-box__teacher-link"
+                                                    href="#"
+                                                    >رضا دولتی</a
+                                                >
+                                            </div>
+                                            <div class="course-box__rating">
+                                                <img
+                                                    class="course-box__star"
+                                                    src="images/svgs/star_fill.svg"
+                                                    alt="rating"
+                                                />
+                                                <img
+                                                    class="course-box__star"
+                                                    src="images/svgs/star_fill.svg"
+                                                    alt="rating"
+                                                />
+                                                <img
+                                                    class="course-box__star"
+                                                    src="images/svgs/star_fill.svg"
+                                                    alt="rating"
+                                                />
+                                                <img
+                                                    class="course-box__star"
+                                                    src="images/svgs/star_fill.svg"
+                                                    alt="rating"
+                                                />
+                                                <img
+                                                    class="course-box__star"
+                                                    src="images/svgs/star.svg"
+                                                    alt="rating"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="course-box__status">
+                                            <div class="course-box__users">
+                                                <i
+                                                    class="fas fa-users course-box__users-icon"
+                                                ></i>
+                                                <span
+                                                    class="course-box__users-text"
+                                                    href="#"
+                                                    >500</span
+                                                >
+                                            </div>
+                                            <span class="course-box__price"
+                                                >1,000,000</span
+                                            >
+                                        </div>
+                                    </div>
+
+                                    <div class="course-box__footer">
+                                        <a
+                                            class="course-box__footer-link"
+                                            href="#"
+                                        >
+                                            مشاهده اطلاعات
+                                            <i
+                                                class="fas fa-arrow-left course-box__footer-icon"
+                                            ></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="course-box">
+                                    <a href="#">
+                                        <img
+                                            class="course-box__img"
+                                            src="images/courses/jango.png"
+                                            alt="Course img"
+                                        />
+                                    </a>
+
+                                    <div class="course-box__main">
+                                        <a class="course-box__title" href="#"
+                                            >دوره پروژه محور متخصص جنگو</a
+                                        >
+                                        <div class="course-box__rating-teacher">
+                                            <div class="course-box__teacher">
+                                                <i
+                                                    class="fas fa-chalkboard-teacher course-box__teacher-icon"
+                                                ></i>
+                                                <a
+                                                    class="course-box__teacher-link"
+                                                    href="#"
+                                                    >رضا دولتی</a
+                                                >
+                                            </div>
+                                            <div class="course-box__rating">
+                                                <img
+                                                    class="course-box__star"
+                                                    src="images/svgs/star_fill.svg"
+                                                    alt="rating"
+                                                />
+                                                <img
+                                                    class="course-box__star"
+                                                    src="images/svgs/star_fill.svg"
+                                                    alt="rating"
+                                                />
+                                                <img
+                                                    class="course-box__star"
+                                                    src="images/svgs/star_fill.svg"
+                                                    alt="rating"
+                                                />
+                                                <img
+                                                    class="course-box__star"
+                                                    src="images/svgs/star_fill.svg"
+                                                    alt="rating"
+                                                />
+                                                <img
+                                                    class="course-box__star"
+                                                    src="images/svgs/star.svg"
+                                                    alt="rating"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="course-box__status">
+                                            <div class="course-box__users">
+                                                <i
+                                                    class="fas fa-users course-box__users-icon"
+                                                ></i>
+                                                <span
+                                                    class="course-box__users-text"
+                                                    href="#"
+                                                    >500</span
+                                                >
+                                            </div>
+                                            <span class="course-box__price"
+                                                >1,000,000</span
+                                            >
+                                        </div>
+                                    </div>
+
+                                    <div class="course-box__footer">
+                                        <a
+                                            class="course-box__footer-link"
+                                            href="#"
+                                        >
+                                            مشاهده اطلاعات
+                                            <i
+                                                class="fas fa-arrow-left course-box__footer-icon"
+                                            ></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="course-box">
+                                    <a href="#">
+                                        <img
+                                            class="course-box__img"
+                                            src="images/courses/js_project.png"
+                                            alt="Course img"
+                                        />
+                                    </a>
+
+                                    <div class="course-box__main">
+                                        <a class="course-box__title" href="#"
+                                            >دوره پروژه محور متخصص جنگو</a
+                                        >
+                                        <div class="course-box__rating-teacher">
+                                            <div class="course-box__teacher">
+                                                <i
+                                                    class="fas fa-chalkboard-teacher course-box__teacher-icon"
+                                                ></i>
+                                                <a
+                                                    class="course-box__teacher-link"
+                                                    href="#"
+                                                    >رضا دولتی</a
+                                                >
+                                            </div>
+                                            <div class="course-box__rating">
+                                                <img
+                                                    class="course-box__star"
+                                                    src="images/svgs/star_fill.svg"
+                                                    alt="rating"
+                                                />
+                                                <img
+                                                    class="course-box__star"
+                                                    src="images/svgs/star_fill.svg"
+                                                    alt="rating"
+                                                />
+                                                <img
+                                                    class="course-box__star"
+                                                    src="images/svgs/star_fill.svg"
+                                                    alt="rating"
+                                                />
+                                                <img
+                                                    class="course-box__star"
+                                                    src="images/svgs/star_fill.svg"
+                                                    alt="rating"
+                                                />
+                                                <img
+                                                    class="course-box__star"
+                                                    src="images/svgs/star.svg"
+                                                    alt="rating"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="course-box__status">
+                                            <div class="course-box__users">
+                                                <i
+                                                    class="fas fa-users course-box__users-icon"
+                                                ></i>
+                                                <span
+                                                    class="course-box__users-text"
+                                                    href="#"
+                                                    >500</span
+                                                >
+                                            </div>
+                                            <span class="course-box__price"
+                                                >1,000,000</span
+                                            >
+                                        </div>
+                                    </div>
+
+                                    <div class="course-box__footer">
+                                        <a
+                                            class="course-box__footer-link"
+                                            href="#"
+                                        >
+                                            مشاهده اطلاعات
+                                            <i
+                                                class="fas fa-arrow-left course-box__footer-icon"
+                                            ></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1073,13 +1361,271 @@
         <div class="presell">
             <div class="container">
                 <div class="presell__header">
-                    <span class="presell__header-title">دوره های در حال پیش فروش</span>
+                    <span class="presell__header-title"
+                        >دوره های در حال پیش فروش</span
+                    >
+                </div>
+                <div class="presell__slider">
+                    <div class="swiper swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="course-box">
+                                    <a href="#">
+                                        <img
+                                            class="course-box__img"
+                                            src="images/courses/nodejs.png"
+                                            alt="Course img"
+                                        />
+                                    </a>
+
+                                    <div class="course-box__main">
+                                        <a class="course-box__title" href="#"
+                                            >دوره پروژه محور متخصص جنگو</a
+                                        >
+                                        <div class="course-box__rating-teacher">
+                                            <div class="course-box__teacher">
+                                                <i
+                                                    class="fas fa-chalkboard-teacher course-box__teacher-icon"
+                                                ></i>
+                                                <a
+                                                    class="course-box__teacher-link"
+                                                    href="#"
+                                                    >رضا دولتی</a
+                                                >
+                                            </div>
+                                            <div class="course-box__rating">
+                                                <img
+                                                    class="course-box__star"
+                                                    src="images/svgs/star_fill.svg"
+                                                    alt="rating"
+                                                />
+                                                <img
+                                                    class="course-box__star"
+                                                    src="images/svgs/star_fill.svg"
+                                                    alt="rating"
+                                                />
+                                                <img
+                                                    class="course-box__star"
+                                                    src="images/svgs/star_fill.svg"
+                                                    alt="rating"
+                                                />
+                                                <img
+                                                    class="course-box__star"
+                                                    src="images/svgs/star_fill.svg"
+                                                    alt="rating"
+                                                />
+                                                <img
+                                                    class="course-box__star"
+                                                    src="images/svgs/star.svg"
+                                                    alt="rating"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="course-box__status">
+                                            <div class="course-box__users">
+                                                <i
+                                                    class="fas fa-users course-box__users-icon"
+                                                ></i>
+                                                <span
+                                                    class="course-box__users-text"
+                                                    href="#"
+                                                    >500</span
+                                                >
+                                            </div>
+                                            <span class="course-box__price"
+                                                >1,000,000</span
+                                            >
+                                        </div>
+                                    </div>
+
+                                    <div class="course-box__footer">
+                                        <a
+                                            class="course-box__footer-link"
+                                            href="#"
+                                        >
+                                            مشاهده اطلاعات
+                                            <i
+                                                class="fas fa-arrow-left course-box__footer-icon"
+                                            ></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="course-box">
+                                    <a href="#">
+                                        <img
+                                            class="course-box__img"
+                                            src="images/courses/python.png"
+                                            alt="Course img"
+                                        />
+                                    </a>
+
+                                    <div class="course-box__main">
+                                        <a class="course-box__title" href="#"
+                                            >دوره پروژه محور متخصص جنگو</a
+                                        >
+                                        <div class="course-box__rating-teacher">
+                                            <div class="course-box__teacher">
+                                                <i
+                                                    class="fas fa-chalkboard-teacher course-box__teacher-icon"
+                                                ></i>
+                                                <a
+                                                    class="course-box__teacher-link"
+                                                    href="#"
+                                                    >رضا دولتی</a
+                                                >
+                                            </div>
+                                            <div class="course-box__rating">
+                                                <img
+                                                    class="course-box__star"
+                                                    src="images/svgs/star_fill.svg"
+                                                    alt="rating"
+                                                />
+                                                <img
+                                                    class="course-box__star"
+                                                    src="images/svgs/star_fill.svg"
+                                                    alt="rating"
+                                                />
+                                                <img
+                                                    class="course-box__star"
+                                                    src="images/svgs/star_fill.svg"
+                                                    alt="rating"
+                                                />
+                                                <img
+                                                    class="course-box__star"
+                                                    src="images/svgs/star_fill.svg"
+                                                    alt="rating"
+                                                />
+                                                <img
+                                                    class="course-box__star"
+                                                    src="images/svgs/star.svg"
+                                                    alt="rating"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="course-box__status">
+                                            <div class="course-box__users">
+                                                <i
+                                                    class="fas fa-users course-box__users-icon"
+                                                ></i>
+                                                <span
+                                                    class="course-box__users-text"
+                                                    href="#"
+                                                    >500</span
+                                                >
+                                            </div>
+                                            <span class="course-box__price"
+                                                >1,000,000</span
+                                            >
+                                        </div>
+                                    </div>
+
+                                    <div class="course-box__footer">
+                                        <a
+                                            class="course-box__footer-link"
+                                            href="#"
+                                        >
+                                            مشاهده اطلاعات
+                                            <i
+                                                class="fas fa-arrow-left course-box__footer-icon"
+                                            ></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="course-box">
+                                    <a href="#">
+                                        <img
+                                            class="course-box__img"
+                                            src="images/courses/youtuber.png"
+                                            alt="Course img"
+                                        />
+                                    </a>
+
+                                    <div class="course-box__main">
+                                        <a class="course-box__title" href="#"
+                                            >دوره پروژه محور متخصص جنگو</a
+                                        >
+                                        <div class="course-box__rating-teacher">
+                                            <div class="course-box__teacher">
+                                                <i
+                                                    class="fas fa-chalkboard-teacher course-box__teacher-icon"
+                                                ></i>
+                                                <a
+                                                    class="course-box__teacher-link"
+                                                    href="#"
+                                                    >رضا دولتی</a
+                                                >
+                                            </div>
+                                            <div class="course-box__rating">
+                                                <img
+                                                    class="course-box__star"
+                                                    src="images/svgs/star_fill.svg"
+                                                    alt="rating"
+                                                />
+                                                <img
+                                                    class="course-box__star"
+                                                    src="images/svgs/star_fill.svg"
+                                                    alt="rating"
+                                                />
+                                                <img
+                                                    class="course-box__star"
+                                                    src="images/svgs/star_fill.svg"
+                                                    alt="rating"
+                                                />
+                                                <img
+                                                    class="course-box__star"
+                                                    src="images/svgs/star_fill.svg"
+                                                    alt="rating"
+                                                />
+                                                <img
+                                                    class="course-box__star"
+                                                    src="images/svgs/star.svg"
+                                                    alt="rating"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="course-box__status">
+                                            <div class="course-box__users">
+                                                <i
+                                                    class="fas fa-users course-box__users-icon"
+                                                ></i>
+                                                <span
+                                                    class="course-box__users-text"
+                                                    href="#"
+                                                    >500</span
+                                                >
+                                            </div>
+                                            <span class="course-box__price"
+                                                >1,000,000</span
+                                            >
+                                        </div>
+                                    </div>
+
+                                    <div class="course-box__footer">
+                                        <a
+                                            class="course-box__footer-link"
+                                            href="#"
+                                        >
+                                            مشاهده اطلاعات
+                                            <i
+                                                class="fas fa-arrow-left course-box__footer-icon"
+                                            ></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Finish Pre-sell Courses -->
-
+        <script src="vendor/SwiperSlider/swiper.js"></script>
         <script src="vendor/FontAwesome/all.min.js"></script>
+        <script src="js/swiper.js"></script>
     </body>
 </html>
