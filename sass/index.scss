@@ -541,4 +541,46 @@ html {
 
 /* Finish Pre-sell Courses Styles */
 
+
+/* Start Articles Styles */
+
+.articles-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .articles-header__right {
+        display: flex;
+        flex-direction: column;
+
+        .articles-header__title {
+            @extend %Title;
+        }
+
+        .articles-header__text {
+            color: #9c9c9c;
+            font-size: 1.5rem;
+        }
+    }
+
+    .articles-header__left {
+        .articles-header__link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $white-color;
+            background-color: $primary-color;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+        }
+
+        .articles-header__icon {
+            margin-right: 0.5rem;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+/* Finish Articles Styles */
+
 //  sass --watch sass/index.scss css/style.css
