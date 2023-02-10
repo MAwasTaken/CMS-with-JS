@@ -685,6 +685,9 @@ html body i {
 
 /* Finish Pre-sell Courses Styles */
 /* Start Articles Styles */
+.articles {
+  margin-bottom: 2rem;
+}
 .articles .articles-header {
   display: flex;
   justify-content: space-between;
@@ -763,6 +766,17 @@ html body i {
   margin-bottom: 2rem;
   position: relative;
 }
+.footer .footer-widgets .footer-widget__item .footer-widget__title::before {
+  content: "";
+  position: absolute;
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: #2bce56;
+  border-radius: 0.7rem;
+  right: 1rem;
+  opacity: 0.3;
+  transform: rotate(45deg);
+}
 .footer .footer-widgets .footer-widget__item .footer-widget__text {
   color: #7d7e7f;
 }
@@ -773,6 +787,19 @@ html body i {
 .footer .footer-widgets .footer-widget__link {
   display: block;
   margin-bottom: 1rem;
+}
+.footer .footer-widgets::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: -1.5rem;
+  margin: 0 auto;
+  height: 4rem;
+  width: 50rem;
+  background-color: #2bce56;
+  z-index: -1;
+  border-radius: 5rem;
 }
 .footer .footer__copyright {
   display: flex;
