@@ -316,5 +316,37 @@ html body i {
 /* Finish Footer Styles */
 /* Start Course Box Styles */
 /* Finish Course Box Styles */
+/* Start Courses Top-Bar Styles */
+.courses {
+  margin: 4rem 0;
+}
+.courses .courses-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.2rem;
+  box-shadow: 0 0 13px 1px rgba(70, 72, 77, 0.08);
+}
+.courses .courses-top-bar .courses-top-bar__left .courses-top-bar__form {
+  position: relative;
+  width: 30rem;
+}
+.courses .courses-top-bar .courses-top-bar__left .courses-top-bar__form .courses-top-bar__input {
+  font-size: 1.5rem;
+  width: 100%;
+  border: 1px solid #dcdcdc;
+  padding: 0.8rem 1.5rem 0.8rem 4.2rem;
+  border-radius: 0.3rem;
+}
+.courses .courses-top-bar .courses-top-bar__left .courses-top-bar__form .courses-top-bar__search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  color: #7d7e7f;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Finish Courses Top-Bar Styles */
 
 /*# sourceMappingURL=category.css.map */
