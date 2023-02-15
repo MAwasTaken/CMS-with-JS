@@ -316,6 +316,34 @@ html body i {
 /* Finish Footer Styles */
 /* Start Course Box Styles */
 /* Finish Course Box Styles */
+.courses-pagination {
+  margin: 3rem 0;
+}
+.courses-pagination .courses__pagination-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.courses-pagination .courses__pagination-list .courses__pagination-item .courses__pagination-link {
+  border-radius: 0.5rem;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  background-color: #f0f0f1;
+  margin: 0 0.5rem;
+}
+.courses-pagination .courses__pagination-list .courses__pagination-item .courses__pagination-link:hover {
+  color: #fff;
+  background-color: #2bce56;
+}
+.courses-pagination .courses__pagination-list .courses__pagination-item .courses__pagination-link-active {
+  color: #fff;
+  background-color: #2bce56;
+}
+
 /* Start Courses Top-Bar Styles */
 .courses {
   margin: 4rem 0;
@@ -504,33 +532,6 @@ html body i {
 }
 .courses .courses-content .course-box .course-box__footer .course-box__footer-link:hover {
   color: #1e83f0 !important;
-}
-.courses .courses-pagination {
-  margin: 3rem 0;
-}
-.courses .courses-pagination .courses__pagination-list {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.courses .courses-pagination .courses__pagination-list .courses__pagination-item .courses__pagination-link {
-  border-radius: 0.5rem;
-  width: 4rem;
-  height: 4rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5rem;
-  background-color: #f0f0f1;
-  margin: 0 0.5rem;
-}
-.courses .courses-pagination .courses__pagination-list .courses__pagination-item .courses__pagination-link:hover {
-  color: #fff;
-  background-color: #2bce56;
-}
-.courses .courses-pagination .courses__pagination-list .courses__pagination-item .courses__pagination-link-active {
-  color: #fff;
-  background-color: #2bce56;
 }
 
 /* Finish Courses Top-Bar Styles */
