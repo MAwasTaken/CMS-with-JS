@@ -7,6 +7,8 @@
 @import "navbar";
 @import "footer";
 
+/* Start breadcrumb Styles */
+
 .breadcrumb {
 	margin-bottom: 2rem;
 
@@ -44,18 +46,72 @@
 					color: #7f8187;
 
 					&:hover {
-                        color: #7f817f;
+						color: #7f817f;
 					}
 
-                    .breadcrumb__icon {
-                        color: #7f817f;
-                        font-size: 1.5rem;
-                        margin: 0 0.7rem;
-                    }
+					.breadcrumb__icon {
+						color: #7f817f;
+						font-size: 1.5rem;
+						margin: 0 0.7rem;
+					}
 				}
 			}
 		}
 	}
 }
+
+/* Finish breadcrumb Styles */
+
+/* Start Course Info Styles */
+
+.course-info {
+	margin-bottom: 6rem;
+
+	.course-info__link {
+		font-size: 1.2rem;
+		color: $primary-color;
+		border-radius: 0.3rem;
+		padding: 0.4rem 1rem;
+		background-color: rgba(43, 206, 86, 0.2);
+
+		&:hover {
+			color: #1e83f0;
+		}
+	}
+
+	.course-info__title {
+		margin: 2rem 0;
+		font-weight: bold;
+		font-size: 2.4rem;
+		color: #464749;
+	}
+
+	.course-info__text {
+		margin-bottom: 3rem;
+		font-size: 1.6rem;
+		color: #7b877a;
+	}
+
+	.course-info__social-media-item {
+		color: #b1bbbf;
+		margin-left: 1.7rem;
+		transition: all 0.4s ease;
+
+		&:hover {
+			color: #1e83f0;
+		}
+
+        .course-info__icon {
+            font-size: 2rem;
+        }
+	}
+
+    .course-info__video {
+        width: 100%;
+        border-radius: 1rem;
+    }
+}
+
+/* Finish Course Info Styles */
 
 //  sass --watch sass/course.scss css/course.css

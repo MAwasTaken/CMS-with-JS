@@ -314,6 +314,7 @@ html body i {
 }
 
 /* Finish Footer Styles */
+/* Start breadcrumb Styles */
 .breadcrumb {
   margin-bottom: 2rem;
 }
@@ -355,5 +356,49 @@ html body i {
   font-size: 1.5rem;
   margin: 0 0.7rem;
 }
+
+/* Finish breadcrumb Styles */
+/* Start Course Info Styles */
+.course-info {
+  margin-bottom: 6rem;
+}
+.course-info .course-info__link {
+  font-size: 1.2rem;
+  color: #2bce56;
+  border-radius: 0.3rem;
+  padding: 0.4rem 1rem;
+  background-color: rgba(43, 206, 86, 0.2);
+}
+.course-info .course-info__link:hover {
+  color: #1e83f0;
+}
+.course-info .course-info__title {
+  margin: 2rem 0;
+  font-weight: bold;
+  font-size: 2.4rem;
+  color: #464749;
+}
+.course-info .course-info__text {
+  margin-bottom: 3rem;
+  font-size: 1.6rem;
+  color: #7b877a;
+}
+.course-info .course-info__social-media-item {
+  color: #b1bbbf;
+  margin-left: 1.7rem;
+  transition: all 0.4s ease;
+}
+.course-info .course-info__social-media-item:hover {
+  color: #1e83f0;
+}
+.course-info .course-info__social-media-item .course-info__icon {
+  font-size: 2rem;
+}
+.course-info .course-info__video {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+/* Finish Course Info Styles */
 
 /*# sourceMappingURL=course.css.map */
