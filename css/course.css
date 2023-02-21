@@ -315,6 +315,34 @@ html body i {
 
 /* Finish Footer Styles */
 /* Start Helper Classes */
+.introduction .introduction__item .introduction__title {
+  font-size: 2rem;
+  color: #444446;
+  font-weight: bold;
+  line-height: 1.2;
+  position: relative;
+}
+.introduction .introduction__item .introduction__title::before {
+  content: "";
+  position: absolute;
+  right: -1rem;
+  width: 0.4rem;
+  height: 4.4rem;
+  background-color: #2bce56;
+  border-radius: 5rem;
+  transform: rotate(8deg);
+}
+.introduction .introduction__item .introduction__title::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 250px;
+  height: 60%;
+  background-color: rgba(43, 206, 86, 0.2);
+}
+
 /* Finish Helper Classes */
 /* Start breadcrumb Styles */
 .breadcrumb {
@@ -464,5 +492,38 @@ html body i {
 }
 
 /* Finish Course Progress Styles */
+/* Start Intoduction Styles */
+.introduction {
+  padding: 3rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 13px 1px rgba(70, 72, 77, 0.08);
+}
+.introduction .introduction__item .introduction__img {
+  margin-top: 3rem;
+  display: block;
+  border-radius: 1rem;
+}
+.introduction .introduction__item .introduction__text {
+  margin-top: 2rem;
+  color: #7a7a7a;
+  font-size: 1.5rem;
+}
+.introduction .introduction__btns {
+  margin-top: 3.4rem;
+}
+.introduction .introduction__btns .introduction__btns-item {
+  color: #2bce56;
+  border: 2px solid #2bce56;
+  border-radius: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.introduction .introduction__btns .introduction__btns-item:hover {
+  color: #fff;
+  background-color: #2bce56;
+}
+
+/* Finish Intoduction Styles */
 
 /*# sourceMappingURL=course.css.map */
