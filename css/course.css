@@ -523,6 +523,55 @@ html body i {
   color: #fff;
   background-color: #2bce56;
 }
+.introduction .introduction__topic {
+  margin-top: 4rem;
+}
+.introduction .introduction__topic .accordion {
+  margin-bottom: 2rem;
+}
+.introduction .introduction__topic .accordion .accordion-item {
+  background-color: #f7f9fa;
+}
+.introduction .introduction__topic .accordion .accordion-item .accordion-button {
+  background-color: #f7f9fa;
+  font-size: 1.5rem;
+  padding: 1.25rem;
+}
+.introduction .introduction__topic .accordion .accordion-item .accordion-button::after {
+  position: absolute;
+  left: 1.5rem;
+  width: 2rem;
+  height: 2rem;
+  background-position: center;
+}
+.introduction .introduction__topic .accordion .accordion-item .introduction__accordion-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1.25rem;
+}
+.introduction .introduction__topic .accordion .accordion-item .introduction__accordion-body .introduction__accordion-right {
+  display: flex;
+  align-items: center;
+}
+.introduction .introduction__topic .accordion .accordion-item .introduction__accordion-body .introduction__accordion-right .introduction__accordion-count {
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 1px solid #bfbfbf;
+  color: #656464;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.introduction .introduction__topic .accordion .accordion-item .introduction__accordion-body .introduction__accordion-right .introduction__accordion-icon {
+  margin: 0 1.5rem;
+  color: rgba(147, 147, 154, 0.6392156863);
+  font-size: 1.8rem;
+}
+.introduction .introduction__topic .accordion .accordion-item .introduction__accordion-body .introduction__accordion-left .introduction__accordion-time {
+  color: #7a7a7a;
+}
 
 /* Finish Intoduction Styles */
 
