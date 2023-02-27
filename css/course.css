@@ -659,6 +659,60 @@ html body i {
 .courses-info .course-info .course-info__register .course-info__register-title .course-info__register-icon {
   font-size: 2rem;
 }
+.courses-info .course-info .course-info__total .course-info__total-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 2px solid #f0f2f7;
+}
+.courses-info .course-info .course-info__total .course-info__total-top .course-info__total-sale .course-info__total-sale-icon {
+  color: #555555;
+  font-size: 2.7rem;
+}
+.courses-info .course-info .course-info__total .course-info__total-top .course-info__total-sale .course-info__total-sale-text {
+  color: #7f8187;
+}
+.courses-info .course-info .course-info__total .course-info__total-top .course-info__total-sale .course-info__total-sale-number {
+  color: #fff;
+  background-color: #c4c7cf;
+  border-radius: 0.5rem;
+  padding: 0.3rem 1.2rem;
+}
+.courses-info .course-info .course-info__total .course-info__total-bottom {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 2rem;
+  color: #7b867f;
+}
+.courses-info .course-info .course-info__total .course-info__total-bottom .course-info__total-comment,
+.courses-info .course-info .course-info__total .course-info__total-bottom .course-info__total-view {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.courses-info .course-info .course-info__total .course-info__total-bottom .course-info__total-comment .course-info__total-comment-icon,
+.courses-info .course-info .course-info__total .course-info__total-bottom .course-info__total-comment .course-info__total-view-icon,
+.courses-info .course-info .course-info__total .course-info__total-bottom .course-info__total-view .course-info__total-comment-icon,
+.courses-info .course-info .course-info__total .course-info__total-bottom .course-info__total-view .course-info__total-view-icon {
+  font-size: 2.2rem;
+}
+.courses-info .course-info .course-info__total .course-info__total-bottom .course-info__total-comment .course-info__total-comment-text,
+.courses-info .course-info .course-info__total .course-info__total-bottom .course-info__total-comment .course-info__total-view-text,
+.courses-info .course-info .course-info__total .course-info__total-bottom .course-info__total-view .course-info__total-comment-text,
+.courses-info .course-info .course-info__total .course-info__total-bottom .course-info__total-view .course-info__total-view-text {
+  font-size: 1.4rem;
+  margin-right: 1rem;
+}
+.courses-info .course-info .course-info__total .course-info__total-bottom .course-info__total-comment::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 1px;
+  background-color: #e5e5e5;
+  left: -3rem;
+}
 
 /* Finish Sidebar Styles */
 
