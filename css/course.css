@@ -734,6 +734,15 @@ html body i {
   padding: 0.5rem 1rem;
   font-size: 1.4rem;
 }
+.courses-info .course-info .course-info__topic-title {
+  display: block;
+  color: #464749;
+  font-size: 1.8rem;
+}
+.courses-info .course-info .course-info__topic-text {
+  font-size: 1.5rem;
+  color: #7d7e7f;
+}
 
 /* Finish Sidebar Styles */
 
