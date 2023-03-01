@@ -713,6 +713,27 @@ html body i {
   background-color: #e5e5e5;
   left: -3rem;
 }
+.courses-info .course-info .course-info__header-short-url {
+  display: flex;
+  align-items: center;
+  color: #7b868a;
+}
+.courses-info .course-info .course-info__header-short-url .course-info__short-url-icon {
+  font-size: 2rem;
+}
+.courses-info .course-info .course-info__header-short-url .course-info__short-url-text {
+  font-size: 1.7rem;
+  margin-right: 0.5rem;
+}
+.courses-info .course-info .course-info__short-url {
+  display: block;
+  margin: 1rem 0;
+  border: 1px solid #dcdcdc;
+  color: #a7a7a7;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.4rem;
+}
 
 /* Finish Sidebar Styles */
 
