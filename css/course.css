@@ -389,9 +389,6 @@ html body i {
 
 /* Finish breadcrumb Styles */
 /* Start Course Info Styles */
-.course-info {
-  margin-bottom: 6rem;
-}
 .course-info .course-info__link {
   font-size: 1.2rem;
   color: #2bce56;
@@ -742,6 +739,29 @@ html body i {
 .courses-info .course-info .course-info__topic-text {
   font-size: 1.5rem;
   color: #7d7e7f;
+}
+.courses-info .course-info .course-info__courses-title {
+  font-size: 1.8rem;
+  display: block;
+  color: #464749;
+  margin-bottom: 1.5rem;
+}
+.courses-info .course-info .courses-info__courses-list-item {
+  margin-bottom: 2rem;
+}
+.courses-info .course-info .courses-info__courses-list-item .course-info__courses-link {
+  display: flex;
+  align-items: center;
+}
+.courses-info .course-info .courses-info__courses-list-item .course-info__courses-link .course-info__courses-img {
+  width: 70px;
+  border-radius: 0.5rem;
+}
+.courses-info .course-info .courses-info__courses-list-item .course-info__courses-link .course-info__courses-text {
+  font-size: 1.3rem;
+  margin-right: 0.5rem;
+  color: #8d8d8d;
+  font-weight: bold;
 }
 
 /* Finish Sidebar Styles */

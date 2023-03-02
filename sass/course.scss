@@ -66,8 +66,6 @@
 /* Start Course Info Styles */
 
 .course-info {
-	margin-bottom: 6rem;
-
 	.course-info__link {
 		font-size: 1.2rem;
 		color: $primary-color;
@@ -462,41 +460,69 @@
 			}
 		}
 
-        .course-info__header-short-url {
-            display: flex;
-            align-items: center;
-            color: #7b868a;
+		.course-info__header-short-url {
+			display: flex;
+			align-items: center;
+			color: #7b868a;
 
-            .course-info__short-url-icon {
-                font-size: 2rem;
-            }
+			.course-info__short-url-icon {
+				font-size: 2rem;
+			}
 
-            .course-info__short-url-text {
-                font-size: 1.7rem;
-                margin-right: 0.5rem;
-            }
-        }
+			.course-info__short-url-text {
+				font-size: 1.7rem;
+				margin-right: 0.5rem;
+			}
+		}
 
-        .course-info__short-url {
-            display: block;
-            margin: 1rem 0;
-            border: 1px solid #dcdcdc;
-            color: #a7a7a7;
-            border-radius: 0.5rem;
-            padding: 0.5rem 1rem;
-            font-size: 1.4rem;
-        }
+		.course-info__short-url {
+			display: block;
+			margin: 1rem 0;
+			border: 1px solid #dcdcdc;
+			color: #a7a7a7;
+			border-radius: 0.5rem;
+			padding: 0.5rem 1rem;
+			font-size: 1.4rem;
+		}
 
-        .course-info__topic-title {
-            display: block;
-            color: $dark-color;
-            font-size: 1.8rem;
-        }
+		.course-info__topic-title {
+			display: block;
+			color: $dark-color;
+			font-size: 1.8rem;
+		}
 
-        .course-info__topic-text {
-            font-size: 1.5rem;
-            color: #7d7e7f;
-        }
+		.course-info__topic-text {
+			font-size: 1.5rem;
+			color: #7d7e7f;
+		}
+
+		.course-info__courses-title {
+			font-size: 1.8rem;
+			display: block;
+			color: $dark-color;
+			margin-bottom: 1.5rem;
+		}
+
+		.courses-info__courses-list-item {
+			margin-bottom: 2rem;
+
+			.course-info__courses-link {
+				display: flex;
+				align-items: center;
+
+				.course-info__courses-img {
+					width: 70px;
+					border-radius: 0.5rem;
+				}
+
+				.course-info__courses-text {
+					font-size: 1.3rem;
+					margin-right: 0.5rem;
+					color: #8d8d8d;
+					font-weight: bold;
+				}
+			}
+		}
 	}
 }
 
