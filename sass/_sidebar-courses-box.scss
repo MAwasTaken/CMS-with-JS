@@ -1,0 +1,40 @@
+.courses-info {
+	top: 2rem;
+	position: sticky;
+
+	.course-info {
+		border-radius: 0.5rem;
+		margin-top: 1rem;
+		padding: 2.2rem;
+		box-shadow: 0 0 13px 1px rgba(70, 72, 77, 0.08);
+		border: 1px solid #f2f2f2;
+
+		.course-info__courses-title {
+			font-size: 1.8rem;
+			display: block;
+			color: $dark-color;
+			margin-bottom: 1.5rem;
+		}
+
+		.courses-info__courses-list-item {
+			margin-bottom: 2rem;
+
+			.course-info__courses-link {
+				display: flex;
+				align-items: center;
+
+				.course-info__courses-img {
+					width: 70px;
+					border-radius: 0.5rem;
+				}
+
+				.course-info__courses-text {
+					font-size: 1.3rem;
+					margin-right: 0.5rem;
+					color: #8d8d8d;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}

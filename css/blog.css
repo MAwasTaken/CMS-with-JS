@@ -358,5 +358,39 @@ html body i {
 }
 
 /* Finish breadcrumb Styles */
+.courses-info {
+  top: 2rem;
+  position: sticky;
+}
+.courses-info .course-info {
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  padding: 2.2rem;
+  box-shadow: 0 0 13px 1px rgba(70, 72, 77, 0.08);
+  border: 1px solid #f2f2f2;
+}
+.courses-info .course-info .course-info__courses-title {
+  font-size: 1.8rem;
+  display: block;
+  color: #464749;
+  margin-bottom: 1.5rem;
+}
+.courses-info .course-info .courses-info__courses-list-item {
+  margin-bottom: 2rem;
+}
+.courses-info .course-info .courses-info__courses-list-item .course-info__courses-link {
+  display: flex;
+  align-items: center;
+}
+.courses-info .course-info .courses-info__courses-list-item .course-info__courses-link .course-info__courses-img {
+  width: 70px;
+  border-radius: 0.5rem;
+}
+.courses-info .course-info .courses-info__courses-list-item .course-info__courses-link .course-info__courses-text {
+  font-size: 1.3rem;
+  margin-right: 0.5rem;
+  color: #8d8d8d;
+  font-weight: bold;
+}
 
 /*# sourceMappingURL=blog.css.map */
