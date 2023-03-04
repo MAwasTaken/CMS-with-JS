@@ -9,4 +9,25 @@
 @import "breadcrumb";
 @import "sidebar-courses-box";
 
+.course-info {
+	overflow: hidden;
+}
+
+.course-info__courses-title {
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		width: 22px;
+		height: 39px;
+		background-color: $primary-color;
+		border-top-left-radius: 8px;
+		border-bottom-left-radius: 12px;
+		right: -27px;
+        top: -10px;
+		transform: skew(-10deg);
+	}
+}
+
 // sass --watch sass/blog.scss css/blog.css
