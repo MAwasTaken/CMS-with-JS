@@ -393,14 +393,14 @@ html body i {
   font-weight: bold;
 }
 
+/* Start Sidebar Styles */
 .course-info {
   overflow: hidden;
 }
-
-.course-info__courses-title {
+.course-info .course-info__courses-title {
   position: relative;
 }
-.course-info__courses-title::before {
+.course-info .course-info__courses-title::before {
   content: "";
   position: absolute;
   width: 22px;
@@ -412,5 +412,33 @@ html body i {
   top: -10px;
   transform: skew(-10deg);
 }
+.course-info .sidebar-articles__list {
+  margin-top: 2rem;
+}
+.course-info .sidebar-articles__list .sidebar-articles__item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eeeeee;
+  padding: 0.9rem 1.3rem 0.9rem 1rem;
+  transition: all 0.4s ease;
+}
+.course-info .sidebar-articles__list .sidebar-articles__item:hover {
+  padding-right: 2rem;
+  background-color: #f8f9fa;
+}
+.course-info .sidebar-articles__list .sidebar-articles__item:hover .side-bar__articles-icon {
+  color: #2bce56;
+}
+.course-info .sidebar-articles__list .sidebar-articles__item .side-bar__articles-icon {
+  font-size: 1.4rem;
+  color: #909aa7;
+  transition: all 0.4s ease;
+}
+.course-info .sidebar-articles__list .sidebar-articles__item .sidebar-articles__link {
+  font-size: 1.3rem;
+  margin-right: 0.3rem;
+}
+
+/* Finish Sidebar Styles */
 
 /*# sourceMappingURL=blog.css.map */

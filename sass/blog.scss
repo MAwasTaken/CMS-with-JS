@@ -9,25 +9,61 @@
 @import "breadcrumb";
 @import "sidebar-courses-box";
 
+/* Start Sidebar Styles */
+
 .course-info {
 	overflow: hidden;
-}
 
-.course-info__courses-title {
-	position: relative;
+	.course-info__courses-title {
+		position: relative;
 
-	&::before {
-		content: "";
-		position: absolute;
-		width: 22px;
-		height: 39px;
-		background-color: $primary-color;
-		border-top-left-radius: 8px;
-		border-bottom-left-radius: 12px;
-		right: -27px;
-        top: -10px;
-		transform: skew(-10deg);
+		&::before {
+			content: "";
+			position: absolute;
+			width: 22px;
+			height: 39px;
+			background-color: $primary-color;
+			border-top-left-radius: 8px;
+			border-bottom-left-radius: 12px;
+			right: -27px;
+			top: -10px;
+			transform: skew(-10deg);
+		}
+	}
+
+	.sidebar-articles__list {
+		margin-top: 2rem;
+
+		.sidebar-articles__item {
+			display: flex;
+			align-items: center;
+			border-bottom: 1px solid #eeeeee;
+			padding: 0.9rem 1.3rem 0.9rem 1rem;
+			transition: all 0.4s ease;
+
+			&:hover {
+				padding-right: 2rem;
+				background-color: #f8f9fa;
+
+				.side-bar__articles-icon {
+					color: $primary-color;
+				}
+			}
+
+			.side-bar__articles-icon {
+				font-size: 1.4rem;
+				color: #909aa7;
+				transition: all 0.4s ease;
+			}
+
+			.sidebar-articles__link {
+                font-size: 1.3rem;
+                margin-right: 0.3rem;
+			}
+		}
 	}
 }
+
+/* Finish Sidebar Styles */
 
 // sass --watch sass/blog.scss css/blog.css
