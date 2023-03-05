@@ -31,10 +31,12 @@
 		}
 	}
 
-	.sidebar-articles__list {
+	.sidebar-articles__list,
+    .last-articles__list {
 		margin-top: 2rem;
 
-		.sidebar-articles__item {
+		.sidebar-articles__item,
+        .last-articles__item {
 			display: flex;
 			align-items: center;
 			border-bottom: 1px solid #eeeeee;
@@ -60,6 +62,10 @@
                 font-size: 1.3rem;
                 margin-right: 0.3rem;
 			}
+
+            .last-articles__link {
+                font-size: 1.4rem;
+            }
 		}
 	}
 }

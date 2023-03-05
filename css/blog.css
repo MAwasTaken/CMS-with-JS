@@ -391,6 +391,10 @@ html body i {
   margin-right: 0.5rem;
   color: #8d8d8d;
   font-weight: bold;
+  transition: all 400ms ease;
+}
+.courses-info .course-info .courses-info__courses-list-item .course-info__courses-link .course-info__courses-text:hover {
+  color: #1e83f0;
 }
 
 /* Start Sidebar Styles */
@@ -412,31 +416,53 @@ html body i {
   top: -10px;
   transform: skew(-10deg);
 }
-.course-info .sidebar-articles__list {
+.course-info .sidebar-articles__list,
+.course-info .last-articles__list {
   margin-top: 2rem;
 }
-.course-info .sidebar-articles__list .sidebar-articles__item {
+.course-info .sidebar-articles__list .sidebar-articles__item,
+.course-info .sidebar-articles__list .last-articles__item,
+.course-info .last-articles__list .sidebar-articles__item,
+.course-info .last-articles__list .last-articles__item {
   display: flex;
   align-items: center;
   border-bottom: 1px solid #eeeeee;
   padding: 0.9rem 1.3rem 0.9rem 1rem;
   transition: all 0.4s ease;
 }
-.course-info .sidebar-articles__list .sidebar-articles__item:hover {
+.course-info .sidebar-articles__list .sidebar-articles__item:hover,
+.course-info .sidebar-articles__list .last-articles__item:hover,
+.course-info .last-articles__list .sidebar-articles__item:hover,
+.course-info .last-articles__list .last-articles__item:hover {
   padding-right: 2rem;
   background-color: #f8f9fa;
 }
-.course-info .sidebar-articles__list .sidebar-articles__item:hover .side-bar__articles-icon {
+.course-info .sidebar-articles__list .sidebar-articles__item:hover .side-bar__articles-icon,
+.course-info .sidebar-articles__list .last-articles__item:hover .side-bar__articles-icon,
+.course-info .last-articles__list .sidebar-articles__item:hover .side-bar__articles-icon,
+.course-info .last-articles__list .last-articles__item:hover .side-bar__articles-icon {
   color: #2bce56;
 }
-.course-info .sidebar-articles__list .sidebar-articles__item .side-bar__articles-icon {
+.course-info .sidebar-articles__list .sidebar-articles__item .side-bar__articles-icon,
+.course-info .sidebar-articles__list .last-articles__item .side-bar__articles-icon,
+.course-info .last-articles__list .sidebar-articles__item .side-bar__articles-icon,
+.course-info .last-articles__list .last-articles__item .side-bar__articles-icon {
   font-size: 1.4rem;
   color: #909aa7;
   transition: all 0.4s ease;
 }
-.course-info .sidebar-articles__list .sidebar-articles__item .sidebar-articles__link {
+.course-info .sidebar-articles__list .sidebar-articles__item .sidebar-articles__link,
+.course-info .sidebar-articles__list .last-articles__item .sidebar-articles__link,
+.course-info .last-articles__list .sidebar-articles__item .sidebar-articles__link,
+.course-info .last-articles__list .last-articles__item .sidebar-articles__link {
   font-size: 1.3rem;
   margin-right: 0.3rem;
+}
+.course-info .sidebar-articles__list .sidebar-articles__item .last-articles__link,
+.course-info .sidebar-articles__list .last-articles__item .last-articles__link,
+.course-info .last-articles__list .sidebar-articles__item .last-articles__link,
+.course-info .last-articles__list .last-articles__item .last-articles__link {
+  font-size: 1.4rem;
 }
 
 /* Finish Sidebar Styles */
