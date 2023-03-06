@@ -9,6 +9,48 @@
 @import "breadcrumb";
 @import "sidebar-courses-box";
 
+/* Start Articles Details Styles */
+
+.article {
+    padding: 2.4rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 5px 3px rgba(70, 72, 77, 0.08);
+
+    .article__title {
+        font-size: 2.6rem;
+        font-weight: bold;
+        color: $dark-color;
+        border-bottom: 2px solid #f3f3f3;
+        padding-bottom: 1rem;
+    }
+
+    .article__header {
+        display: flex;
+        align-items: center;
+        padding-top: 1rem;
+        
+        .article-header__item {
+            margin-left: 2rem;
+
+            .article__header-icon {
+                font-size: 1.7rem;
+                color: #c7c7c7;
+            }
+
+            .article-header__text {
+                font-size: 1.2rem;
+                color: #8f8f8f;
+            }
+        }
+    }
+
+    .article__banner {
+        margin-top: 1.4rem;
+    }
+}
+
+/* Finish Articles Details Styles */
+
 /* Start Sidebar Styles */
 
 .course-info {
