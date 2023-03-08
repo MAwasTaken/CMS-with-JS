@@ -9,6 +9,16 @@
 @import "breadcrumb";
 @import "sidebar-courses-box";
 
+/* Start Helper Classes */
+
+%paragraph {
+    font-size: 1.5rem;
+    line-height: 3rem;
+    color: #7d7d7f;
+}
+
+/* Finish Helper Classes */
+
 /* Start Articles Details Styles */
 
 .article {
@@ -62,6 +72,10 @@
             font-size: 1.7rem;
             color: #7d7d7f;
         }
+    }
+    
+    .article__paragraph {
+        @extend %paragraph;
     }
 
 }

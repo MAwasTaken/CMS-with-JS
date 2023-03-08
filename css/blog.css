@@ -397,6 +397,14 @@ html body i {
   color: #1e83f0;
 }
 
+/* Start Helper Classes */
+.article .article__paragraph {
+  font-size: 1.5rem;
+  line-height: 3rem;
+  color: #7d7d7f;
+}
+
+/* Finish Helper Classes */
 /* Start Articles Details Styles */
 .article {
   padding: 2.4rem;
@@ -442,7 +450,6 @@ html body i {
   font-size: 1.7rem;
   color: #7d7d7f;
 }
-
 /* Finish Articles Details Styles */
 /* Start Sidebar Styles */
 .course-info {
