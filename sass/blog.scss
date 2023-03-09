@@ -12,9 +12,9 @@
 /* Start Helper Classes */
 
 %paragraph {
-    font-size: 1.5rem;
-    line-height: 3rem;
-    color: #7d7d7f;
+	font-size: 1.5rem;
+	line-height: 3rem;
+	color: #7d7d7f;
 }
 
 /* Finish Helper Classes */
@@ -22,86 +22,113 @@
 /* Start Articles Details Styles */
 
 .article {
-    padding: 2.4rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 5px 3px rgba(70, 72, 77, 0.08);
+	padding: 2.4rem;
+	border-radius: 0.5rem;
+	box-shadow: 0 5px 3px rgba(70, 72, 77, 0.08);
 
-    .article__title {
-        font-size: 2.6rem;
-        font-weight: bold;
-        color: $dark-color;
-        border-bottom: 2px solid #f3f3f3;
-        padding-bottom: 1rem;
-    }
+	.article__title {
+		font-size: 2.6rem;
+		font-weight: bold;
+		color: $dark-color;
+		border-bottom: 2px solid #f3f3f3;
+		padding-bottom: 1rem;
+	}
 
-    .article__header {
-        display: flex;
-        align-items: center;
-        padding-top: 1rem;
-        
-        .article-header__item {
-            margin-left: 2rem;
+	.article__header {
+		display: flex;
+		align-items: center;
+		padding-top: 1rem;
 
-            .article__header-icon {
-                font-size: 1.7rem;
-                color: #c7c7c7;
-            }
+		.article-header__item {
+			margin-left: 2rem;
 
-            .article-header__text {
-                font-size: 1.2rem;
-                color: #8f8f8f;
-            }
-        }
-    }
+			.article__header-icon {
+				font-size: 1.7rem;
+				color: #c7c7c7;
+			}
 
-    .article__banner {
-        margin-top: 1.4rem;
-    }
+			.article-header__text {
+				font-size: 1.2rem;
+				color: #8f8f8f;
+			}
+		}
+	}
 
-    .article__score {
-        display: flex;
-        align-items: center;
-        margin: 2rem 0;
+	.article__banner {
+		margin-top: 1.4rem;
+		display: block;
+		margin: 0 auto;
+	}
 
-        .article__score-icon {
-            margin-left: -0.4rem;
-        }
+	.article__score {
+		display: flex;
+		align-items: center;
+		margin: 2rem 0;
 
-        .article__score-text {
-            margin-right: 2rem;
-            font-size: 1.7rem;
-            color: #7d7d7f;
-        }
-    }
-    
-    .article__paragraph {
-        @extend %paragraph;
-    }
+		.article__score-icon {
+			margin-left: -0.4rem;
+		}
 
-    .article-read {
-        background-color: #f2f2f2;
-        border-radius: 3rem;
-        padding: 2rem 3rem;
-        margin: 3rem 0;
+		.article__score-text {
+			margin-right: 2rem;
+			font-size: 1.7rem;
+			color: #7d7d7f;
+		}
+	}
 
-        .article-read__title {
-            display: block;
-            color: #333;
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
+	.article__paragraph {
+		@extend %paragraph;
+	}
 
-        .article-read__link {
-            line-height: 2;
-            font-size: 1.5rem;
-            color: #1e83f0;
+	.article-read {
+		background-color: #f2f2f2;
+		border-radius: 3rem;
+		padding: 2rem 3rem;
+		margin: 3rem 0;
 
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-    }
+		.article-read__title {
+			display: block;
+			color: #333;
+			font-size: 1.5rem;
+			margin-bottom: 0.5rem;
+			font-weight: bold;
+		}
+
+		.article-read__link {
+			line-height: 2;
+			font-size: 1.5rem;
+			color: #1e83f0;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	.article__secondary-banner {
+		display: block;
+		margin: 0 auto;
+	}
+
+	.article-section {
+		margin: 5rem 0;
+
+		.article-section__title {
+			font-size: 2.4rem;
+			color: #008c25;
+			font-weight: bold;
+			line-height: 1.2rem;
+		}
+
+		.article-section__text {
+			@extend %paragraph;
+			margin: 2rem 0;
+		}
+
+		.article-section__img {
+			display: block;
+			margin: 0 auto;
+		}
+	}
 }
 
 /* Finish Articles Details Styles */
@@ -129,11 +156,11 @@
 	}
 
 	.sidebar-articles__list,
-    .last-articles__list {
+	.last-articles__list {
 		margin-top: 2rem;
 
 		.sidebar-articles__item,
-        .last-articles__item {
+		.last-articles__item {
 			display: flex;
 			align-items: center;
 			border-bottom: 1px solid #eeeeee;
@@ -156,13 +183,13 @@
 			}
 
 			.sidebar-articles__link {
-                font-size: 1.3rem;
-                margin-right: 0.3rem;
+				font-size: 1.3rem;
+				margin-right: 0.3rem;
 			}
 
-            .last-articles__link {
-                font-size: 1.4rem;
-            }
+			.last-articles__link {
+				font-size: 1.4rem;
+			}
 		}
 	}
 }

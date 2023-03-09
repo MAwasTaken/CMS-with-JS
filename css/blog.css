@@ -398,7 +398,7 @@ html body i {
 }
 
 /* Start Helper Classes */
-.article .article__paragraph {
+.article .article-section .article-section__text, .article .article__paragraph {
   font-size: 1.5rem;
   line-height: 3rem;
   color: #7d7d7f;
@@ -436,6 +436,8 @@ html body i {
 }
 .article .article__banner {
   margin-top: 1.4rem;
+  display: block;
+  margin: 0 auto;
 }
 .article .article__score {
   display: flex;
@@ -470,6 +472,26 @@ html body i {
 }
 .article .article-read .article-read__link:hover {
   text-decoration: underline;
+}
+.article .article__secondary-banner {
+  display: block;
+  margin: 0 auto;
+}
+.article .article-section {
+  margin: 5rem 0;
+}
+.article .article-section .article-section__title {
+  font-size: 2.4rem;
+  color: #008c25;
+  font-weight: bold;
+  line-height: 1.2rem;
+}
+.article .article-section .article-section__text {
+  margin: 2rem 0;
+}
+.article .article-section .article-section__img {
+  display: block;
+  margin: 0 auto;
 }
 
 /* Finish Articles Details Styles */
