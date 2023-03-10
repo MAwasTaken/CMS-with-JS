@@ -493,6 +493,23 @@ html body i {
   display: block;
   margin: 0 auto;
 }
+.article .article-social-media {
+  display: flex;
+  align-items: center;
+}
+.article .article-social-media .article-social-media__text {
+  font-size: 1.5rem;
+  color: #7b7d7f;
+}
+.article .article-social-media .article-social-media__link {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem;
+  color: #7b868a;
+}
+.article .article-social-media .article-social-media__link:hover {
+  color: #1e83f0;
+}
 
 /* Finish Articles Details Styles */
 /* Start Sidebar Styles */
