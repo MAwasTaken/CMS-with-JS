@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -509,6 +510,53 @@ html body i {
 }
 .article .article-social-media .article-social-media__link:hover {
   color: #1e83f0;
+}
+
+.suggestion-articles {
+  margin: 4rem 0;
+  padding: 3.5rem 2.5rem;
+  border-radius: 0.5rem;
+  background-color: #f0f2f7;
+}
+.suggestion-articles .suggestion-articles__right,
+.suggestion-articles .suggestion-articles__left {
+  display: flex;
+  align-items: center;
+}
+.suggestion-articles .suggestion-articles__right .suggestion-articles__icon-link,
+.suggestion-articles .suggestion-articles__left .suggestion-articles__icon-link {
+  color: #adb5db;
+  text-align: center;
+  margin: 0 2rem;
+}
+.suggestion-articles .suggestion-articles__right .suggestion-articles__icon-link:hover,
+.suggestion-articles .suggestion-articles__left .suggestion-articles__icon-link:hover {
+  color: #1e83f0;
+}
+.suggestion-articles .suggestion-articles__right {
+  position: relative;
+}
+.suggestion-articles .suggestion-articles__right::before {
+  content: "قدیمی تر";
+  position: absolute;
+  top: -2rem;
+  left: 2rem;
+  font-size: 1.8rem;
+  color: #adb5db;
+  font-weight: bold;
+  transform: rotate(180deg);
+}
+.suggestion-articles .suggestion-articles__left {
+  flex-direction: row-reverse;
+  position: relative;
+}
+.suggestion-articles .suggestion-articles__left::before {
+  content: "جدید تر";
+  position: absolute;
+  top: -2rem;
+  right: 0rem;
+  font-size: 1.8rem;
+  color: #adb5db;
 }
 
 /* Finish Articles Details Styles */

@@ -152,6 +152,59 @@
 	}
 }
 
+.suggestion-articles {
+    margin: 4rem 0;
+    padding: 3.5rem 2.5rem;
+    border-radius: 0.5rem;
+    background-color: #f0f2f7;
+
+    .suggestion-articles__right,
+    .suggestion-articles__left {
+        display: flex;
+        align-items: center;
+
+        .suggestion-articles__icon-link {
+            color: #adb5db;
+            text-align: center;
+            margin: 0 2rem;
+
+            &:hover {
+                color: #1e83f0;
+            }
+        }
+    }
+
+    .suggestion-articles__right {
+        position: relative;
+
+        &::before {
+            content: 'قدیمی تر';
+            position: absolute;
+            top: -2rem;
+            left: 2rem;
+            font-size: 1.8rem;
+            color: #adb5db;
+            font-weight: bold;
+            transform: rotate(180deg);
+        }
+    }
+    
+    .suggestion-articles__left {
+        flex-direction: row-reverse;
+        position: relative;
+
+        &::before {
+            content: 'جدید تر';
+            position: absolute;
+            top: -2rem;
+            right: 0rem;
+            font-size: 1.8rem;
+            color: #adb5db;
+        }
+    }
+
+}
+
 /* Finish Articles Details Styles */
 
 /* Start Sidebar Styles */
