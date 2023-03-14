@@ -1,0 +1,67 @@
+@import "reset";
+@import "variables";
+@import "fonts";
+@import "responsive";
+@import "top-bar";
+@import "navbar";
+@import "default";
+@import "footer";
+
+.login-register {
+	display: flex;
+	justify-content: center;
+	position: relative;
+	overflow: hidden;
+
+	.login {
+		background-color: $white-color;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		margin: 4rem 0;
+		padding: 2.5rem 2rem 5rem 2rem;
+		box-shadow: 0 6px 20px rgba(168, 172, 185, 0.3);
+		border-radius: 5px;
+		width: 50rem;
+		border-bottom: 5px solid $primary-color;
+
+		.login__title {
+			display: block;
+			color: #7b868a;
+			font-size: 2.2rem;
+		}
+
+		.login__subtitle {
+			font-size: 1.5rem;
+			color: #7b868a;
+			display: block;
+		}
+
+		.login__new-member {
+			background-color: #f0f2f7;
+			margin: 1.5rem 0;
+			border-radius: 5px;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 1.5rem 0;
+
+			.login__new-member-text {
+				font-size: 1.4rem;
+				color: #7b868a;
+			}
+
+			.login__new-member-link {
+				background-color: #a8aaaf;
+				padding: 0.4rem 0.8rem;
+				border-radius: 5px;
+				font-size: 1.2rem;
+				color: $white-color;
+				margin-right: 0.7rem;
+			}
+		}
+	}
+}
+
+// sass --watch sass/login.scss css/login.css
