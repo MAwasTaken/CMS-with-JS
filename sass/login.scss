@@ -113,7 +113,54 @@
 					right: 1rem;
 				}
 			}
+
+			.login-form__password-setting {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin: 1rem 0;
+
+				.login-form__password-remember {
+					display: flex;
+					align-items: center;
+
+					.login-form__password-checkbox {
+						margin-left: 1rem;
+					}
+
+					.login-form__password-text {
+						font-size: 1.4rem;
+						color: #6c757d;
+						cursor: pointer;
+                        user-select: none;
+					}
+				}
+
+				.login-form__password-forget {
+					.login-form__password-forget-link {
+						font-size: 1.4rem;
+						color: #6c757d;
+
+						&:hover {
+							color: #1e83f0;
+						}
+					}
+				}
+			}
 		}
+
+        .login__des {
+            margin-top: 3rem;
+            color: #7b868a;
+            font-size: 1.2rem;
+            width: 100%;
+
+            .login__des-list {
+                list-style: disc;
+                margin-right: 2rem;
+                margin-top: 1rem;
+            }
+        }
 	}
 }
 
