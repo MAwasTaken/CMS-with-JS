@@ -5,16 +5,23 @@ window.addEventListener("load", () => {
 	let landingText = "ما به هر قیمتی دوره آموزشی تولید نمی کنیم !";
 	let typeIndex = 0;
 
-    typeWriter(landingText, typeIndex)
+	typeWriter(landingText, typeIndex);
 });
 
 function typeWriter(text, index) {
 	if (index < text.length) {
 		landingTitle.innerHTML += text[index];
 		index++;
-	}
 
-    setTimeout(() => {
-        typeWriter(text, index)
-    }, 100);
+		setTimeout(() => {
+			typeWriter(text, index);
+		}, 100);
+	} else if ((index = text.length)) {
+		setTimeout(() => {
+			index = 0;
+			landingTitle.innerHTML = "";
+            
+			typeWriter(text, index);
+		}, 5000);
+	}
 }
