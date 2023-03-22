@@ -1,11 +1,17 @@
 const $ = document;
 const landingTitle = $.querySelector(".landing__title");
+const landingCoursesCount = $.querySelector("#courses-count");
+const landingMinutesCounter = $.querySelector("#minutes-counter");
+const landingUsersCount = $.querySelector("#users-counter");
 
 window.addEventListener("load", () => {
 	let landingText = "ما به هر قیمتی دوره آموزشی تولید نمی کنیم !";
 	let typeIndex = 0;
 
 	typeWriter(landingText, typeIndex);
+	makeCounter(40, landingCoursesCount, 20);
+	makeCounter(31_320, landingMinutesCounter, 1);
+	makeCounter(31_071, landingUsersCount, 1);
 });
 
 function typeWriter(text, index) {
@@ -20,8 +26,21 @@ function typeWriter(text, index) {
 		setTimeout(() => {
 			index = 0;
 			landingTitle.innerHTML = "";
-            
+
 			typeWriter(text, index);
 		}, 5000);
 	}
+}
+
+function makeCounter(max, elem, countDown) {
+	let counter = 0;
+
+	const interval = setInterval(() => {
+		if (counter === max) {
+			clearInterval(interval);
+		}
+
+		elem.innerHTML = counter;
+		counter++;
+	}, countDown);
 }
