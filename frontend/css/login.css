@@ -471,4 +471,9 @@ html body i {
   background-color: rgba(43, 206, 86, 0.6);
 }
 
+.swal-button-container {
+  display: flex;
+  justify-content: center;
+}
+
 /*# sourceMappingURL=login.css.map */

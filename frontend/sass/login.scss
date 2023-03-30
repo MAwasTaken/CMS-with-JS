@@ -185,4 +185,9 @@
     }
 }
 
+.swal-button-container {
+  display: flex;
+  justify-content: center;
+}
+
 // sass --watch sass/login.scss css/login.css
