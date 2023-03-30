@@ -26,7 +26,7 @@ const register = () => {
 				title: "ثبت نام با موفقیت انجام شد",
 				icon: "success",
 				buttons: "ورود به پنل",
-			});
+			}).then((result) => (location.href = "index.html"));
 		} else if (res.status === 409) {
 			swal({
 				title: "نام کاربری یا ایمیل قبلا استفاده شده",
@@ -34,7 +34,6 @@ const register = () => {
 				buttons: "تصحیح اطلاعات",
 			});
 		}
-		return res.json();
 	});
 };
 
