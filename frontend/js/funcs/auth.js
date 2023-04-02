@@ -1,4 +1,4 @@
-import { showSwal, saveIntoLocalStorage } from "./utils.js";
+import { showSwal, saveIntoLocalStorage, getToken } from "./utils.js";
 
 const register = () => {
 	const nameInput = document.querySelector("#name");
@@ -58,4 +58,19 @@ const login = () => {
 		.then((result) => saveIntoLocalStorage("user", { token: result.accessToken }));
 };
 
-export { register, login };
+const getMe = async () => {
+	const token = getToken();
+
+	if (!token) return false;
+
+	const res = await fetch("http://localhost:4000/v1/auth/me", {
+		headers: {
+			Authorization: `Bearer ${token}`,
+		},
+	});
+
+	const data = await res.json();
+	return data;
+};
+
+export { register, login, getMe };
