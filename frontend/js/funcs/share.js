@@ -23,15 +23,21 @@ const renderTopbarMenu = async () => {
 	const res = await fetch("http://localhost:4000/v1/menus/topbar");
 	const topbarMenus = await res.json();
 
-  console.log(topbarMenus);
+	console.log(topbarMenus);
 
-  topBarList.innerHTML = "";
+	topBarList.innerHTML = "";
 
-	[...topbarMenus].splice(0, 6).map((menu) => {
+	const suffledArray = topbarMenus.sort((a, b) => 0.5 - Math.random());
+
+	suffledArray.splice(0, 6).map((menu) => {
 		topBarList.innerHTML += `<li class="top-bar__item">
       <a href="${menu.href}" class="top-bar__link">${menu.title}</a>
     </li>`;
 	});
+
+  topBarList.innerHTML += `<li class="top-bar__item">
+  <a href="#" class="top-bar__link">20,000 تومان</a>
+</li>`
 };
 
 export { showUserNameInNavbar, renderTopbarMenu };
