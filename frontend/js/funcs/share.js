@@ -64,11 +64,18 @@ const getAndShowAllCourses = async () => {
                 <a class="course-box__teacher-link" href="#">${course.creator}</a>
               </div>
               <div class="course-box__rating">
-                <img class="course-box__star" src="images/svgs/star_fill.svg" alt="rating" />
-                <img class="course-box__star" src="images/svgs/star_fill.svg" alt="rating" />
-                <img class="course-box__star" src="images/svgs/star_fill.svg" alt="rating" />
-                <img class="course-box__star" src="images/svgs/star_fill.svg" alt="rating" />
-                <img class="course-box__star" src="images/svgs/star.svg" alt="rating" />
+              ${
+                Array(course.courseAverageScore)
+								.fill(1)
+								.map((score) => '<img class="course-box__star" src="images/svgs/star_fill.svg" alt="rating" />')
+								.join(" ")
+              }
+              ${
+                Array(5 - course.courseAverageScore)
+								.fill(0)
+								.map((score) => '<img class="course-box__star" src="images/svgs/star.svg" alt="rating" />')
+								.join(" ")
+              }
               </div>
             </div>
             <div class="course-box__status">
