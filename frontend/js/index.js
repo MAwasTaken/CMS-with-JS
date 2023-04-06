@@ -1,4 +1,4 @@
-import { getAndShowAllCourses, getAndShowArticles, getAndShowPopularCourses, getAndShowPresellCourses } from "./funcs/share.js";
+import { getAndShowAllCourses, getAndShowArticles, getAndShowMenus, getAndShowPopularCourses, getAndShowPresellCourses } from "./funcs/share.js";
 
 const $ = document;
 const landingTitle = $.querySelector(".landing__title");
@@ -15,10 +15,11 @@ window.addEventListener("load", () => {
 	makeCounter(31_320, landingMinutesCounter, 1);
 	makeCounter(31_071, landingUsersCount, 1);
 
-	getAndShowAllCourses()
-	getAndShowPopularCourses()
-	getAndShowPresellCourses()
-  getAndShowArticles().then(data => {
+	getAndShowAllCourses();
+	getAndShowPopularCourses();
+	getAndShowPresellCourses();
+	getAndShowArticles();
+  getAndShowMenus().then(data => {
     console.log(data);
   })
 });

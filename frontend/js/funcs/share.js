@@ -100,7 +100,7 @@ const getAndShowPopularCourses = async () => {
 	const res = await fetch("http://localhost:4000/v1/courses/popular");
 	const popularCourses = await res.json();
 
-	popularCourses.forEach((course) => {
+	popularCourses.map((course) => {
 		popularCoursesWrapper.insertAdjacentHTML(
 			"beforeend",
 			`
@@ -212,7 +212,7 @@ const getAndShowArticles = async () => {
 	const res = await fetch("http://localhost:4000/v1/articles");
 	const articles = await res.json();
 
-	articles.slice(0, 6).forEach((article) => {
+	articles.slice(0, 6).map((article) => {
 		articlesWrapper.insertAdjacentHTML(
 			"beforeend",
 			`
@@ -237,4 +237,45 @@ const getAndShowArticles = async () => {
 	return articles;
 };
 
-export { showUserNameInNavbar, renderTopbarMenu, getAndShowAllCourses, getAndShowPopularCourses, getAndShowPresellCourses, getAndShowArticles };
+const getAndShowMenus = async () => {
+	const menuWrapper = document.querySelector("#menus-wrapper");
+
+	const res = await fetch("http://localhost:4000/v1/menus");
+	const menus = await res.json();
+
+	menus.map((menu) => {
+		menuWrapper.insertAdjacentHTML(
+			"beforeend",
+			`
+      <li class="main-header__item">
+        <a href="#" class="main-header__link">${menu.title}
+          ${
+						menu.submenus.length !== 0
+							? `
+              <i class="fas fa-angle-down main-header__link-icon"></i>
+              <ul class="main-header__dropdown">
+                ${menu.submenus
+									.map(
+										(submenu) =>
+											`<li class='main-header__dropdown-item'>
+										    <a href='#' class='main-header__dropdown-link'>
+											    ${submenu.title}
+										    </a>
+									    </li>
+                    `
+									)
+									.join("")}
+              </ul>
+            `
+							: ""
+					}
+        </a>
+      </li>
+    `
+		);
+	});
+
+	return menus;
+};
+
+export { showUserNameInNavbar, renderTopbarMenu, getAndShowAllCourses, getAndShowPopularCourses, getAndShowPresellCourses, getAndShowArticles, getAndShowMenus };
