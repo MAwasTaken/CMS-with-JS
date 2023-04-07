@@ -1,5 +1,5 @@
 import { getMe } from "./auth.js";
-import { isLogin } from "./utils.js";
+import { isLogin, getUrlParam } from "./utils.js";
 
 const showUserNameInNavbar = () => {
 	const isUserLogin = isLogin();
@@ -248,7 +248,7 @@ const getAndShowMenus = async () => {
 			"beforeend",
 			`
       <li class="main-header__item">
-        <a href="#" class="main-header__link">${menu.title}
+        <a href=category.html?cat=${menu.href} class="main-header__link">${menu.title}
           ${
 						menu.submenus.length !== 0
 							? `
@@ -278,4 +278,14 @@ const getAndShowMenus = async () => {
 	return menus;
 };
 
-export { showUserNameInNavbar, renderTopbarMenu, getAndShowAllCourses, getAndShowPopularCourses, getAndShowPresellCourses, getAndShowArticles, getAndShowMenus };
+const getAndShowCategoryCourses = async () => {
+	const categoryName = getUrlParam("cat");
+  console.log(categoryName);
+
+	const res = await fetch(`http://localhost:4000/v1/courses/category/${categoryName}`);
+	const courses = await res.json();
+
+	return courses;
+};
+
+export { showUserNameInNavbar, renderTopbarMenu, getAndShowAllCourses, getAndShowPopularCourses, getAndShowPresellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses };
