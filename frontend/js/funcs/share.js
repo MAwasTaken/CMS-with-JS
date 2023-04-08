@@ -280,17 +280,22 @@ const getAndShowMenus = async () => {
 
 const getAndShowCategoryCourses = async () => {
 	const categoryName = getUrlParam("cat");
-	const categoryCoursesWrapper = document.querySelector("#category-courses-wrapper");
 
 	const res = await fetch(`http://localhost:4000/v1/courses/category/${categoryName}`);
 	const courses = await res.json();
 
-	if (courses.length) {
-		courses.map((course) =>
-			categoryCoursesWrapper.insertAdjacentHTML(
+  // bakend brokedown
+	return [];
+};
+
+const insertCourseBoxHtmlTemplate = (courses, showType, parentElement) => {
+	parentElement.innerHTML = "";
+
+	if (showType === "row") {
+		courses.map((course) => {
+			parentElement.insertAdjacentHTML(
 				"beforeend",
-				`
-          <div class="col-4">
+				`<div class="col-4">
           <div class="course-box">
             <a href="#">
               <img class="course-box__img" src="images/courses/jango.png" alt="Course img" />
@@ -328,20 +333,57 @@ const getAndShowCategoryCourses = async () => {
               </a>
             </div>
           </div>
-        </div>
-    `
+        </div>`
+			);
+		});
+	} else {
+		courses.map((course) =>
+			parentElement.insertAdjacentHTML(
+				"beforeend",
+				`
+              <div class="col-12">
+              <div class="course-box">
+                <a href="#">
+                  <img class="course-box__img" src="images/courses/jango.png" alt="Course img" />
+                </a>
+                <div class="course-box__main">
+                  <a class="course-box__title" href="#">${course.name}</a>
+                  <div class="course-box__rating-teacher">
+                    <div class="course-box__teacher">
+                      <i class="fas fa-chalkboard-teacher course-box__teacher-icon"></i>
+                      <a class="course-box__teacher-link" href="#">${course.creator}</a>
+                    </div>
+                    <div class="course-box__rating">
+                    ${Array(course.courseAverageScore)
+											.fill(1)
+											.map((score) => '<img class="course-box__star" src="images/svgs/star_fill.svg" alt="rating" />')
+											.join(" ")}
+                    ${Array(5 - course.courseAverageScore)
+											.fill(0)
+											.map((score) => '<img class="course-box__star" src="images/svgs/star.svg" alt="rating" />')
+											.join(" ")}
+                    </div>
+                  </div>
+                  <div class="course-box__status">
+                    <div class="course-box__users">
+                      <i class="fas fa-users course-box__users-icon"></i>
+                      <span class="course-box__users-text" href="#">${course.registers}</span>
+                    </div>
+                    <span class="course-box__price">${course.price === 0 ? "رایگان" : course.price.toLocaleString()}</span>
+                  </div>
+                </div>
+                <div class="course-box__footer">
+                  <a class="course-box__footer-link" href="#">
+                    مشاهده اطلاعات
+                    <i class="fas fa-arrow-left course-box__footer-icon"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+        `
 			)
 		);
-	} else {
-		categoryCoursesWrapper.insertAdjacentHTML(
-			"beforeend",
-			`
-      <div class="alert alert-danger">هیچ دوره ای برای این دسته بندی وجود ندارد :/</div>
-    `
-		);
 	}
-
-	return courses;
 };
 
-export { showUserNameInNavbar, renderTopbarMenu, getAndShowAllCourses, getAndShowPopularCourses, getAndShowPresellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses };
+export { showUserNameInNavbar, renderTopbarMenu, getAndShowAllCourses, getAndShowPopularCourses, getAndShowPresellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate };
