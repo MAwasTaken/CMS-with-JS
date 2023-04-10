@@ -1,4 +1,4 @@
-import { getAndShowCategoryCourses, insertCourseBoxHtmlTemplate } from "./funcs/share.js";
+import { getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting } from "./funcs/share.js";
 
 window.addEventListener("load", () => {
 	getAndShowCategoryCourses().then((responseCourses) => {
@@ -6,6 +6,8 @@ window.addEventListener("load", () => {
 		const categoryCoursesWrapper = document.querySelector("#category-courses-wrapper");
 		let coursesShowType = "row";
 		const coursesShowTypeIcons = document.querySelectorAll(".courses-top-bar__icon-parent");
+		const coursesFilteringSelections = document.querySelectorAll(".courses-top-bar__selection-item");
+		const selectionTitleElement = document.querySelector(".courses-top-bar__selection-title");
 
 		// show category courses by row show type
 		if (courses.length) {
@@ -19,6 +21,7 @@ window.addEventListener("load", () => {
 			);
 		}
 
+		// show category courses by row show type (user selection)
 		coursesShowTypeIcons.forEach((coursesShowTypeIcon) => {
 			coursesShowTypeIcon.addEventListener("click", (event) => {
 				coursesShowTypeIcon.forEach((icon) => icon.classList.remove("courses-top-bar__icon--active"));
@@ -34,6 +37,27 @@ window.addEventListener("load", () => {
 
 					insertCourseBoxHtmlTemplate(courses, coursesShowType, categoryCoursesWrapper);
 				}
+			});
+		});
+
+		// show category courses by row user filtering method
+		coursesFilteringSelections.forEach((coursesFilteringSelection) => {
+			coursesFilteringSelection.addEventListener("click", (event) => {
+				coursesFilteringSelections.forEach((selectionElement) => selectionElement.classList.remove("courses-top-bar__selection-item--active"));
+				event.target.classList.add("courses-top-bar__selection-item--active");
+
+				selectionTitleElement.innerHTML = "";
+				selectionTitleElement.insertAdjacentHTML(
+					"beforeend",
+					`
+          ${event.target.innerHTML}
+          <i class="fas fa-angle-down courses-top-bar__selection-icon"></i>
+        `
+				);
+
+				let userFilteringSelection = event.target.dataset.key;
+				let shownCourses = coursesSorting([...courses], userFilteringSelection);
+				insertCourseBoxHtmlTemplate(shownCourses, coursesShowType, categoryCoursesWrapper);
 			});
 		});
 	});

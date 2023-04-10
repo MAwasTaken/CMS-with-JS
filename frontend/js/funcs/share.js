@@ -284,7 +284,7 @@ const getAndShowCategoryCourses = async () => {
 	const res = await fetch(`http://localhost:4000/v1/courses/category/${categoryName}`);
 	const courses = await res.json();
 
-  // bakend brokedown
+	// bakend brokedown
 	return [];
 };
 
@@ -386,4 +386,43 @@ const insertCourseBoxHtmlTemplate = (courses, showType, parentElement) => {
 	}
 };
 
-export { showUserNameInNavbar, renderTopbarMenu, getAndShowAllCourses, getAndShowPopularCourses, getAndShowPresellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate };
+const coursesSorting = (array, filterMethod) => {
+	let outputArray = [];
+
+	switch (filterMethod) {
+		case "default": {
+			outputArray = array;
+
+			break;
+		}
+
+		case "free": {
+			outputArray = array.filter((course) => course.price === 0);
+
+			break;
+		}
+
+		case "money": {
+			outputArray = array.filter((course) => course.price !== 0);
+
+			break;
+		}
+
+		case "first": {
+			outputArray = [...array].reverse();
+		}
+
+		case "last": {
+			outputArray = array;
+		}
+
+		default:
+			{
+				outputArray = array;
+			}
+
+			return outputArray;
+	}
+};
+
+export { showUserNameInNavbar, renderTopbarMenu, getAndShowAllCourses, getAndShowPopularCourses, getAndShowPresellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting };

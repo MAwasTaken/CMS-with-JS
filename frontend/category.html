@@ -102,12 +102,12 @@
 								<i class="fas fa-angle-down courses-top-bar__selection-icon"></i>
 							</span>
 							<ul class="courses-top-bar__selection-list">
-								<li class="courses-top-bar__selection-item courses-top-bar__selection-item--active">مرتب سازی پیش فرض</li>
-								<li class="courses-top-bar__selection-item">مرتب سازی بر اساس محبوبیت</li>
-								<li class="courses-top-bar__selection-item">مرتب سازی بر اساس امتیاز</li>
-								<li class="courses-top-bar__selection-item">مرتب سازی بر اساس آخرین</li>
-								<li class="courses-top-bar__selection-item">مرتب سازی بر اساس ارزانترین</li>
-								<li class="courses-top-bar__selection-item">مرتب سازی بر اساس گرانترین</li>
+								<li class="courses-top-bar__selection-item courses-top-bar__selection-item--active" data-key="default">مرتب سازی پیش فرض</li>
+								<li class="courses-top-bar__selection-item" data-key="score">مرتب سازی بر اساس امتیاز</li>
+								<li class="courses-top-bar__selection-item" data-key="last">مرتب سازی بر اساس آخرین</li>
+								<li class="courses-top-bar__selection-item" data-key="first">مرتب سازی بر اساس اولین</li>
+								<li class="courses-top-bar__selection-item" data-key="free">مرتب سازی بر اساس فقط رایگان</li>
+								<li class="courses-top-bar__selection-item" data-key="money">مرتب سازی بر اساس فقط غیر رایگان</li>
 							</ul>
 						</div>
 					</div>
@@ -121,7 +121,7 @@
 				<div class="courses-content">
 					<div class="container">
 						<div class="row" id="category-courses-wrapper">
-              <!-- element from js -->
+							<!-- element from js -->
 						</div>
 					</div>
 				</div>
@@ -162,9 +162,7 @@
 						<div class="col-4">
 							<div class="footer-widget__item">
 								<span class="footer-widget__title">درباره ما</span>
-								<p class="footer-widget__text">
-									وقتی تازه شروع به یادگیری برنامه نویسی کردم. یکی از مشکلاتی که در فرآیند یادگیری داشتم، کمبود آموزش های خوب با پشتیبانی قابل قبول بود که باعث شد اون موقع تصمیم بگیرم اگر روزی توانایی مالی و فنی قابل قبولی داشتم یک وب سایت برای حل این مشکل راه اندازی کنم! و خب امروز آکادمی آموزش برنامه نویسی سبزلرن به عنوان یک آکادمی خصوصی فعالیت میکنه و این به این معنی هست که هر مدرسی اجازه تدریس در اون رو نداره و باید از فیلترینگ های خاص آکادمی سبزلرن رد شه! این به این معنی هست که ما برامون فن بیان و نحوه تعامل مدرس با دانشجو بسیار مهمه! ما در آکادمی سبزلرن تضمین پشتیبانی خوب و با کیفیت رو به شما میدیم . چرا که مدرسین وب سایت سبزلرن حتی برای پشتیبانی دوره های رایگان شون هم هزینه دریافت میکنند و متعهد هستند که هوای کاربر های عزیز رو داشته باشند!
-								</p>
+								<p class="footer-widget__text">وقتی تازه شروع به یادگیری برنامه نویسی کردم. یکی از مشکلاتی که در فرآیند یادگیری داشتم، کمبود آموزش های خوب با پشتیبانی قابل قبول بود که باعث شد اون موقع تصمیم بگیرم اگر روزی توانایی مالی و فنی قابل قبولی داشتم یک وب سایت برای حل این مشکل راه اندازی کنم! و خب امروز آکادمی آموزش برنامه نویسی سبزلرن به عنوان یک آکادمی خصوصی فعالیت میکنه و این به این معنی هست که هر مدرسی اجازه تدریس در اون رو نداره و باید از فیلترینگ های خاص آکادمی سبزلرن رد شه! این به این معنی هست که ما برامون فن بیان و نحوه تعامل مدرس با دانشجو بسیار مهمه! ما در آکادمی سبزلرن تضمین پشتیبانی خوب و با کیفیت رو به شما میدیم . چرا که مدرسین وب سایت سبزلرن حتی برای پشتیبانی دوره های رایگان شون هم هزینه دریافت میکنند و متعهد هستند که هوای کاربر های عزیز رو داشته باشند!</p>
 							</div>
 						</div>
 						<div class="col-4">
@@ -215,7 +213,7 @@
 		<!-- Finish Footer -->
 
 		<script src="vendor/FontAwesome/all.min.js"></script>
-    <script src="js/shared.js" type="module"></script>
-    <script src="js/category.js" type="module"></script>
+		<script src="js/shared.js" type="module"></script>
+		<script src="js/category.js" type="module"></script>
 	</body>
 </html>
