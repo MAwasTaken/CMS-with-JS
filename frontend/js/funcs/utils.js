@@ -23,9 +23,15 @@ const isLogin = () => {
 };
 
 const getUrlParam = (key) => {
-  const urlParams = new URLSearchParams(window.location.search)
+	const urlParams = new URLSearchParams(window.location.search);
 
-  return urlParams.get(key)
+	return urlParams.get(key);
 };
 
-export { showSwal, saveIntoLocalStorage, getFromLocalStorage, getToken, isLogin, getUrlParam };
+const searchInArray = (array, searchProperty, searchValue) => {
+	let outputArray = array.filter((item) => item[searchProperty].toLowerCase().includes(searchValue.toLowerCase()));
+
+	return outputArray;
+};
+
+export { showSwal, saveIntoLocalStorage, getFromLocalStorage, getToken, isLogin, getUrlParam, searchInArray };

@@ -1,4 +1,5 @@
 import { getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting } from "./funcs/share.js";
+import { searchInArray } from "./funcs/utils.js";
 
 window.addEventListener("load", () => {
 	getAndShowCategoryCourses().then((responseCourses) => {
@@ -8,6 +9,7 @@ window.addEventListener("load", () => {
 		const coursesShowTypeIcons = document.querySelectorAll(".courses-top-bar__icon-parent");
 		const coursesFilteringSelections = document.querySelectorAll(".courses-top-bar__selection-item");
 		const selectionTitleElement = document.querySelector(".courses-top-bar__selection-title");
+		const coursesSearchBoxInput = document.querySelector(".courses-top-bar__input");
 
 		// show category courses by row show type
 		if (courses.length) {
@@ -59,6 +61,13 @@ window.addEventListener("load", () => {
 				let shownCourses = coursesSorting([...courses], userFilteringSelection);
 				insertCourseBoxHtmlTemplate(shownCourses, coursesShowType, categoryCoursesWrapper);
 			});
+		});
+
+		// handle search in courses
+		coursesSearchBoxInput.addEventListener("change", (event) => {
+			const shownCourses = searchInArray([...responseCourses], "name", event.target.value);
+
+			insertCourseBoxHtmlTemplate(shownCourses, coursesShowType, categoryCoursesWrapper);
 		});
 	});
 });
