@@ -427,6 +427,15 @@ const coursesSorting = (array, filterMethod) => {
 
 const getCourseDetails = () => {
 	const courseShortName = getUrlParam("name");
+	const $ = document;
+	const courseTitleElement = $.querySelector(".course-info__title");
+	const courseDescriptionElement = $.querySelector(".course-info__text");
+	const courseCategoryElement = $.querySelector(".course-info__link");
+	const courseRegisterInfoElement = $.querySelector(".course-info__register-title");
+	const courseStatusElement = $.querySelector(".course-boxes__box-left-subtitle");
+	const courseSupportElement = $.querySelector(".course-boxes__box-left--support");
+	const courseLastUpdate = $.querySelector(".course-boxes__box-left--last-update");
+	const courseTimeElement = $.querySelector(".course-boxes__box-left--time");
 
 	fetch(`http://localhost:4000/v1/courses/${courseShortName}`, {
 		method: "POST",
@@ -437,6 +446,36 @@ const getCourseDetails = () => {
 		.then((res) => res.json())
 		.then((course) => {
 			console.log(course);
+			courseTitleElement.innerHTML = course.name;
+			courseDescriptionElement.innerHTML = course.description;
+			courseCategoryElement.innerHTML = course.categoryID.title;
+			courseRegisterInfoElement.insertAdjacentHTML(
+				"beforeend",
+				course.isUserRegisteredToThisCourse
+					? `
+        دانشجوی دوره هستید
+      `
+					: `
+      ثبت نام در دوره`
+			);
+			courseStatusElement.innerHTML = course.isComplete ? `تکمیل شده` : `در حال برگزاری`;
+			courseSupportElement.innerHTML = course.support;
+			courseLastUpdate.innerHTML = course.updatedAt.slice(0, 10);
+      
+			let courseTotalTimeMinute = null;
+			let courseTotalTimeSecond = null;
+
+			course.sessions.map((session) => {
+				courseTotalTimeMinute += Number(session.time.slice(0, 2));
+				courseTotalTimeSecond += Number(session.time.slice(3, 5));
+			});
+
+			if (courseTotalTimeSecond >= 60) {
+				courseTotalTimeMinute += Math.floor(courseTotalTimeSecond / 60);
+				courseTotalTimeSecond = courseTotalTimeSecond - Math.floor(courseTotalTimeSecond / 60) * 60;
+			}
+
+			courseTimeElement.innerHTML = Math.floor(courseTotalTimeMinute / 60) + " ساعت";
 		});
 };
 

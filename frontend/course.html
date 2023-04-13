@@ -12,7 +12,7 @@
 	</head>
 	<body>
 		<!-- Start Header -->
-    
+
 		<header class="header">
 			<div class="top-bar">
 				<div class="container-fluid">
@@ -174,7 +174,7 @@
 											</div>
 											<div class="course-boxes__box-left">
 												<span class="course-boxes__box-left-title"> مدت زمان دوره: </span>
-												<span class="course-boxes__box-left-subtitle"> 19 ساعت</span>
+												<span class="course-boxes__box-left-subtitle course-boxes__box-left--time"> 19 ساعت</span>
 											</div>
 										</div>
 									</div>
@@ -185,7 +185,7 @@
 											</div>
 											<div class="course-boxes__box-left">
 												<span class="course-boxes__box-left-title"> آخرین بروزرسانی: </span>
-												<span class="course-boxes__box-left-subtitle"> 1401/03/02</span>
+												<span class="course-boxes__box-left-subtitle course-boxes__box-left--last-update"> 1401/03/02</span>
 											</div>
 										</div>
 									</div>
@@ -196,7 +196,7 @@
 											</div>
 											<div class="course-boxes__box-left">
 												<span class="course-boxes__box-left-title"> روش پشتیبانی: </span>
-												<span class="course-boxes__box-left-subtitle">آنلاین</span>
+												<span class="course-boxes__box-left-subtitle course-boxes__box-left--support">آنلاین</span>
 											</div>
 										</div>
 									</div>
@@ -351,7 +351,7 @@
 								<div class="course-info__register">
 									<span class="course-info__register-title">
 										<i class="fas fa-graduation-cap course-info__register-icon"></i>
-										دانشجوی دوره هستید.
+										<!-- element from js -->
 									</span>
 								</div>
 							</div>
@@ -387,47 +387,39 @@
 								<span class="course-info__topic-title"> سر فصل های دوره </span>
 								<span class="course-info__topic-text">
 									برای مشاهده و یا دانلود دوره روی کلمه
-									<a href="#" style="color: blue; font-weight: bold;">لینک</a>
+									<a href="#" style="color: blue; font-weight: bold">لینک</a>
 									کلیک کنید
 								</span>
 							</div>
 							<div class="course-info">
-                                <span class="course-info__courses-title">دوره های مرتبط</span>
-                                <ul class="course-info__courses-list">
-                                    <li class="courses-info__courses-list-item">
-                                        <a href="#" class="course-info__courses-link">
-                                            <img src="images/courses/js_project.png" alt="course cover" class="course-info__courses-img">
-                                            <span class="course-info__courses-text">
-                                                پروژه های تخصصی با جاوااسکریپت
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li class="courses-info__courses-list-item">
-                                        <a href="#" class="course-info__courses-link">
-                                            <img src="images/courses/fareelancer.png" alt="course cover" class="course-info__courses-img">
-                                            <span class="course-info__courses-text">
-                                                تعیین قیمت پروژه های فریلنسری
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li class="courses-info__courses-list-item">
-                                        <a href="#" class="course-info__courses-link">
-                                            <img src="images/courses/nodejs.png" alt="course cover" class="course-info__courses-img">
-                                            <span class="course-info__courses-text">
-                                                دوره Api نویسی
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li class="courses-info__courses-list-item">
-                                        <a href="#" class="course-info__courses-link">
-                                            <img src="images/courses/jango.png" alt="course cover" class="course-info__courses-img">
-                                            <span class="course-info__courses-text">
-                                                دوره متخصص جنگو
-                                            </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+								<span class="course-info__courses-title">دوره های مرتبط</span>
+								<ul class="course-info__courses-list">
+									<li class="courses-info__courses-list-item">
+										<a href="#" class="course-info__courses-link">
+											<img src="images/courses/js_project.png" alt="course cover" class="course-info__courses-img" />
+											<span class="course-info__courses-text"> پروژه های تخصصی با جاوااسکریپت </span>
+										</a>
+									</li>
+									<li class="courses-info__courses-list-item">
+										<a href="#" class="course-info__courses-link">
+											<img src="images/courses/fareelancer.png" alt="course cover" class="course-info__courses-img" />
+											<span class="course-info__courses-text"> تعیین قیمت پروژه های فریلنسری </span>
+										</a>
+									</li>
+									<li class="courses-info__courses-list-item">
+										<a href="#" class="course-info__courses-link">
+											<img src="images/courses/nodejs.png" alt="course cover" class="course-info__courses-img" />
+											<span class="course-info__courses-text"> دوره Api نویسی </span>
+										</a>
+									</li>
+									<li class="courses-info__courses-list-item">
+										<a href="#" class="course-info__courses-link">
+											<img src="images/courses/jango.png" alt="course cover" class="course-info__courses-img" />
+											<span class="course-info__courses-text"> دوره متخصص جنگو </span>
+										</a>
+									</li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -445,9 +437,7 @@
 						<div class="col-4">
 							<div class="footer-widget__item">
 								<span class="footer-widget__title">درباره ما</span>
-								<p class="footer-widget__text">
-									وقتی تازه شروع به یادگیری برنامه نویسی کردم. یکی از مشکلاتی که در فرآیند یادگیری داشتم، کمبود آموزش های خوب با پشتیبانی قابل قبول بود که باعث شد اون موقع تصمیم بگیرم اگر روزی توانایی مالی و فنی قابل قبولی داشتم یک وب سایت برای حل این مشکل راه اندازی کنم! و خب امروز آکادمی آموزش برنامه نویسی سبزلرن به عنوان یک آکادمی خصوصی فعالیت میکنه و این به این معنی هست که هر مدرسی اجازه تدریس در اون رو نداره و باید از فیلترینگ های خاص آکادمی سبزلرن رد شه! این به این معنی هست که ما برامون فن بیان و نحوه تعامل مدرس با دانشجو بسیار مهمه! ما در آکادمی سبزلرن تضمین پشتیبانی خوب و با کیفیت رو به شما میدیم . چرا که مدرسین وب سایت سبزلرن حتی برای پشتیبانی دوره های رایگان شون هم هزینه دریافت میکنند و متعهد هستند که هوای کاربر های عزیز رو داشته باشند!
-								</p>
+								<p class="footer-widget__text">وقتی تازه شروع به یادگیری برنامه نویسی کردم. یکی از مشکلاتی که در فرآیند یادگیری داشتم، کمبود آموزش های خوب با پشتیبانی قابل قبول بود که باعث شد اون موقع تصمیم بگیرم اگر روزی توانایی مالی و فنی قابل قبولی داشتم یک وب سایت برای حل این مشکل راه اندازی کنم! و خب امروز آکادمی آموزش برنامه نویسی سبزلرن به عنوان یک آکادمی خصوصی فعالیت میکنه و این به این معنی هست که هر مدرسی اجازه تدریس در اون رو نداره و باید از فیلترینگ های خاص آکادمی سبزلرن رد شه! این به این معنی هست که ما برامون فن بیان و نحوه تعامل مدرس با دانشجو بسیار مهمه! ما در آکادمی سبزلرن تضمین پشتیبانی خوب و با کیفیت رو به شما میدیم . چرا که مدرسین وب سایت سبزلرن حتی برای پشتیبانی دوره های رایگان شون هم هزینه دریافت میکنند و متعهد هستند که هوای کاربر های عزیز رو داشته باشند!</p>
 							</div>
 						</div>
 						<div class="col-4">
@@ -498,7 +488,7 @@
 		<!-- Finish Footer -->
 		<script src="vendor/FontAwesome/all.min.js"></script>
 		<script src="vendor/BootStrap/bootstrap.min.js"></script>
-    <script src="./js/shared.js" type="module"></script>
-    <script src="./js/course.js" type="module"></script>
+		<script src="./js/shared.js" type="module"></script>
+		<script src="./js/course.js" type="module"></script>
 	</body>
 </html>
