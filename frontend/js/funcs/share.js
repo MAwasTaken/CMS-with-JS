@@ -1,5 +1,5 @@
 import { getMe } from "./auth.js";
-import { isLogin, getUrlParam } from "./utils.js";
+import { isLogin, getUrlParam, getToken } from "./utils.js";
 
 const showUserNameInNavbar = () => {
 	const isUserLogin = isLogin();
@@ -50,11 +50,11 @@ const getAndShowAllCourses = async () => {
 			`
         <div class="col-4">
         <div class="course-box">
-          <a href="#">
+          <a href="course.html?name=${course.shortName}">
             <img class="course-box__img" src=http://localhost:4000/courses/covers/${course.cover} alt="Course img" />
           </a>
           <div class="course-box__main">
-            <a class="course-box__title" href="#">${course.name}</a>
+            <a class="course-box__title" href="course.html?name=${course.shortName}">${course.name}</a>
             <div class="course-box__rating-teacher">
               <div class="course-box__teacher">
                 <i class="fas fa-chalkboard-teacher course-box__teacher-icon"></i>
@@ -425,4 +425,19 @@ const coursesSorting = (array, filterMethod) => {
 	}
 };
 
-export { showUserNameInNavbar, renderTopbarMenu, getAndShowAllCourses, getAndShowPopularCourses, getAndShowPresellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting };
+const getCourseDetails = () => {
+	const courseShortName = getUrlParam("name");
+
+	fetch(`http://localhost:4000/v1/courses/${courseShortName}`, {
+		method: "POST",
+		headers: {
+			Authorization: `Bearer ${getToken()}`,
+		},
+	})
+		.then((res) => res.json())
+		.then((course) => {
+			console.log(course);
+		});
+};
+
+export { showUserNameInNavbar, renderTopbarMenu, getAndShowAllCourses, getAndShowPopularCourses, getAndShowPresellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting, getCourseDetails };
