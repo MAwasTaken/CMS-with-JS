@@ -495,7 +495,7 @@ const getCourseDetails = () => {
                 ${
 									session.free || course.isUserRegisteredToThisCourse
 										? `
-                  <a href="#" class="introduction__accordion-link">${session.title}</a>
+                  <a href="episode.html?name=${course.shortName}&id=${session._id}" class="introduction__accordion-link">${session.title}</a>
                   `
 										: `
                   <span href="#" class="introduction__accordion-link">${session.title}</span>
@@ -562,4 +562,19 @@ const getAndShowRelatedCourses = async () => {
 	return relatedCourses;
 };
 
-export { showUserNameInNavbar, renderTopbarMenu, getAndShowAllCourses, getAndShowPopularCourses, getAndShowPresellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting, getCourseDetails, getAndShowRelatedCourses };
+const getSessionDetails = async () => {
+	const courseShortName = getUrlParam("name");
+	const sessionID = getUrlParam("id");
+
+	const res = await fetch(`http://localhost:4000/v1/courses/${courseShortName}/${sessionID}`, {
+		headers: {
+			Authorization: `Bearer ${getToken()}`,
+		},
+	});
+
+	const session = await res.json();
+
+	return session;
+};
+
+export { showUserNameInNavbar, renderTopbarMenu, getAndShowAllCourses, getAndShowPopularCourses, getAndShowPresellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting, getCourseDetails, getAndShowRelatedCourses, getSessionDetails };
