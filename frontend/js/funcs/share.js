@@ -427,6 +427,7 @@ const coursesSorting = (array, filterMethod) => {
 
 const getCourseDetails = () => {
 	const courseShortName = getUrlParam("name");
+
 	const $ = document;
 	const courseTitleElement = $.querySelector(".course-info__title");
 	const courseDescriptionElement = $.querySelector(".course-info__text");
@@ -491,10 +492,25 @@ const getCourseDetails = () => {
               <div class="introduction__accordion-right">
                 <span class="introduction__accordion-count">${index + 1}</span>
                 <i class="fab fa-youtube introduction__accordion-icon"></i>
-                <a href="#" class="introduction__accordion-link">${session.title}</a>
+                ${
+									session.free || course.isUserRegisteredToThisCourse
+										? `
+                  <a href="#" class="introduction__accordion-link">${session.title}</a>
+                  `
+										: `
+                  <span href="#" class="introduction__accordion-link">${session.title}</span>
+                `
+								}
               </div>
               <div class="introduction__accordion-left">
                 <span class="introduction__accordion-time">${session.time}</span>
+                ${
+									!(session.free || course.isUserRegisteredToThisCourse)
+										? `
+                  <i class="fa fa-lock"></i>
+                `
+										: ""
+								}
               </div>
             </div>
           `
@@ -508,7 +524,7 @@ const getCourseDetails = () => {
               <div class="introduction__accordion-right">
                 <span class="introduction__accordion-count"> -- </span>
                 <i class="fab fa-youtube introduction__accordion-icon"></i>
-                <a href="#" class="introduction__accordion-link">هنوز جلسه ای آپلود نشده است !</a>
+                <span href="#" class="introduction__accordion-link">هنوز جلسه ای آپلود نشده است !</span>
               </div>
               <div class="introduction__accordion-left">
                 <span class="introduction__accordion-time"> --:-- </span>
@@ -520,4 +536,30 @@ const getCourseDetails = () => {
 		});
 };
 
-export { showUserNameInNavbar, renderTopbarMenu, getAndShowAllCourses, getAndShowPopularCourses, getAndShowPresellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting, getCourseDetails };
+const getAndShowRelatedCourses = async () => {
+	const courseShortName = getUrlParam("name");
+
+	const courseRelatedCoursesWrapper = document.querySelector(".course-info__courses-list");
+
+	const res = await fetch(`http://localhost:4000/v1/courses/related/${courseShortName}`);
+	const relatedCourses = await res.json();
+
+	if (relatedCourses.length)
+		relatedCourses.forEach((relatedCourse) =>
+			courseRelatedCoursesWrapper.insertAdjacentHTML(
+				"beforeend",
+				`
+          <li class="courses-info__courses-list-item">
+            <a href="course.html?name=${relatedCourse.shortName}" class="course-info__courses-link">
+              <img src='http://localhost:4000/courses/covers/${relatedCourse.cover}' alt="course cover" class="course-info__courses-img" />
+              <span class="course-info__courses-text">${relatedCourse.name}</span>
+            </a>
+          </li>
+        `
+			)
+		);
+
+	return relatedCourses;
+};
+
+export { showUserNameInNavbar, renderTopbarMenu, getAndShowAllCourses, getAndShowPopularCourses, getAndShowPresellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting, getCourseDetails, getAndShowRelatedCourses };
