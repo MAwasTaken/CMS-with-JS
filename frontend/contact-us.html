@@ -3,12 +3,13 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Episode</title>
+		<title>Contact Us</title>
 		<link rel="stylesheet" href="vendor/FontAwesome/all.min.css" />
 		<link rel="stylesheet" href="vendor/SwiperSlider/swiper.css" />
 		<link rel="stylesheet" href="vendor/BootStrap/bootstrap.min.css" />
-		<link rel="stylesheet" href="css/episode.css" />
+		<link rel="stylesheet" href="css/contact-us.css" />
 	</head>
+
 	<body>
 		<!-- Start Header -->
 
@@ -84,76 +85,34 @@
 
 		<!-- Finish Header -->
 
-		<!--------------------------------  Header  -------------------------------->
-		<section class="content">
-			<div class="col-4">
-				<div class="sidebar">
-					<div class="sidebar__header">
-						<a class="sidebar__header-link" href="#">
-							<i class="sidebar__haeder-icon fa fa-book-open"></i>
-							لیست درس
-						</a>
+		<!--------------------------------  Content-Section  -------------------------------->
+		<section class="login-register">
+			<div class="login register-form">
+				<span class="login__title">ارتباط با ما</span>
+				<span class="login__subtitle">نظر یا انتقادتو بنویس برامون :)</span>
+				<form action="#" class="login-form">
+					<div class="login-form__username login-form__parent">
+						<input class="login-form__username-input" type="text" id="name" placeholder="نام و نام خانوادگی" />
+						<i class="login-form__username-icon fa fa-user"></i>
 					</div>
-					<div class="sidebar-topics">
-						<div class="sidebar-topics__item">
-							<div class="sidebar-topics__item-content">
-								<i class="sidebar-topics__icon fa fa-plus"></i>
-								<a class="sidebar-topics__link" href="#">سطح مقدماتی</a>
-							</div>
-							<ul class="sidebar-topics__list">
-								<!-- element from js -->
-							</ul>
-						</div>
-						<div class="sidebar-topics__item">
-							<div class="sidebar-topics__item-content">
-								<i class="sidebar-topics__item-icon fa fa-plus"></i>
-								<a class="sidebar-topics__item-link" href="#">سطح متوسط</a>
-							</div>
-						</div>
-						<div class="sidebar-topics__item">
-							<div class="sidebar-topics__item-content">
-								<i class="sidebar-topics__item-icon fa fa-plus"></i>
-								<a class="sidebar-topics__item-link" href="#">سطح پیشرفته</a>
-							</div>
-						</div>
+					<div class="login-form__password login-form__parent">
+						<input class="login-form__password-input" type="text" id="email" placeholder="آدرس ایمیل" />
+						<i class="login-form__password-icon fa fa-envelope"></i>
 					</div>
-				</div>
-			</div>
-			<div class="col-8">
-				<div class="episode">
-					<div class="episode-haeder">
-						<div class="episode-header__right">
-							<a class="episode-header__right-back-link" href="#">
-								<i class="episode-header__right-back-icon fa fa-angle-right"></i>
-								<div class="episode-header__right-home">
-									<a class="episode-header__right-home-link" href="#">به دوره خانه بروید</a>
-									<i class="episode-header__right-home-icon fa fa-home"></i>
-								</div>
-							</a>
-						</div>
-						<div class="episode-header__left">
-							<i class="episode-header__left-icon fa fa-play-circle"></i>
-							<span class="episode-header__left-text"> سوالات متداول در مورد جاوااسکریپت و دوره</span>
-						</div>
+					<div class="login-form__phone-number login-form__parent">
+						<input class="login-form__password-input" type="text" id="phone" placeholder="شماره تماس" />
+						<i class="login-form__password-icon fa fa-phone"></i>
 					</div>
-					<div class="episode-content">
-						<video class="episode-content__video" controls src=""></video>
-						<a class="episode-content__video-link" href="#">دانلود ویدئو</a>
-						<div class="episode-content__bottom">
-							<a class="episode-content__backward" href="#">
-								<i class="episode-content__backward-icon fa fa-arrow-right"></i>
-								قبلی
-							</a>
-							<a class="episode-content__forward" href="#">
-								بعدی
-								<i class="episode-content__backward-icon fa fa-arrow-left"></i>
-							</a>
-						</div>
+					<div class="login-form__text login-form__parent">
+						<textarea class="login-form__text-input" id="body" placeholder="متن خود را وارد کنید"></textarea>
 					</div>
-				</div>
+					<button class="login-form__btn" type="submit" id="submit-btn">
+						<span class="login-form__btn-text">ارسال</span>
+					</button>
+				</form>
 			</div>
 		</section>
-		<!--------------------------------  Header  -------------------------------->
+		<!--------------------------------  Content-Section  -------------------------------->
 
 		<!-- Start Footer -->
 
@@ -217,6 +176,6 @@
 		<script src="vendor/FontAwesome/all.min.js"></script>
 		<script src="vendor/BootStrap/bootstrap.min.js"></script>
 		<script src="js/shared.js" type="module"></script>
-		<script src="js/episode.js" type="module"></script>
+		<script src="js/contact-us.js" type="module"></script>
 	</body>
 </html>
