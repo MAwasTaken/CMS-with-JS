@@ -566,15 +566,37 @@ const getSessionDetails = async () => {
 	const courseShortName = getUrlParam("name");
 	const sessionID = getUrlParam("id");
 
+	const sessionVideoPlayer = document.querySelector(".episode-content__video");
+	const courseSessionsListElement = document.querySelector(".sidebar-topics__list");
+
 	const res = await fetch(`http://localhost:4000/v1/courses/${courseShortName}/${sessionID}`, {
 		headers: {
 			Authorization: `Bearer ${getToken()}`,
 		},
 	});
 
-	const session = await res.json();
+	const responseData = await res.json();
 
-	return session;
+	sessionVideoPlayer.setAttribute("src", `http://localhost:4000/courses/covers/${responseData.session.video}`);
+	responseData.sessions.forEach((session) => {
+		courseSessionsListElement.insertAdjacentHTML(
+			"beforeend",
+			`
+      <li class="sidebar-topics__list-item">
+        <div class="sidebar-topics__list-right">
+          <svg class="svg-inline--fa fa-circle-play sidebar-topics__list-item-icon" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-play" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M512 256c0 141.4-114.6 256-256 256S0 397.4 0 256S114.6 0 256 0S512 114.6 512 256zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9V344c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z"></path></svg><!-- <i class="sidebar-topics__list-item-icon fa fa-play-circle"></i> Font Awesome fontawesome.com -->
+          ${session.free ? `<a class="sidebar-topics__list-item-link" href="episode.html?name=${courseShortName}&id=${session._id}">${session.title}</a>` : `<span class="sidebar-topics__list-item-link">${session.title}</span>`}
+        </div>
+        <div class="sidebar-topics__list-left">
+          <span class="sidebar-topics__list-item-time">${session.time}</span>
+          ${session.free ? `` : `<i class="fa fa-lock"></i>`}
+        </div>
+      </li>
+    `
+		);
+	});
+
+	return responseData;
 };
 
 export { showUserNameInNavbar, renderTopbarMenu, getAndShowAllCourses, getAndShowPopularCourses, getAndShowPresellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting, getCourseDetails, getAndShowRelatedCourses, getSessionDetails };
