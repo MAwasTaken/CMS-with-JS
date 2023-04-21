@@ -622,13 +622,28 @@ const submitContactUsMsg = async () => {
 
 	const result = await res.json();
 
-	if (res.status === 201) {
-		showSwal("پیغام شما با موفقیت ارسال شد.", "success", "ورود به پنل", (result) => (location.href = "index.html"));
-	} else {
-		showSwal("مشکلی در ارسال پیغام وجود دارد! \nلطفا بعدا تست کنید", "error", "ای بابا :(", () => {});
-	}
+	if (res.status === 201) showSwal("پیغام شما با موفقیت ارسال شد.", "success", "ورود به پنل", (result) => (location.href = "index.html"));
+	else showSwal("مشکلی در ارسال پیغام وجود دارد! \nلطفا بعدا تست کنید", "error", "ای بابا :(", () => {});
 
 	console.log(result);
 };
 
-export { showUserNameInNavbar, renderTopbarMenu, getAndShowAllCourses, getAndShowPopularCourses, getAndShowPresellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting, getCourseDetails, getAndShowRelatedCourses, getSessionDetails, submitContactUsMsg };
+const createNewNewsLetter = async () => {
+	const newsLetterInput = document.querySelector("#news-letter-input");
+
+	const newNewsLetterEmailObj = {
+		email: newsLetterInput.value.trim(),
+	};
+
+	const res = await fetch(`http://localhost:4000/v1/newsletters`, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify(newNewsLetterEmailObj),
+	});
+
+	if (res.ok) showSwal("با موفقیت در خبرنامه سبزلرن عضو شدید.", "success", "متوجه شدم", () => {});
+};
+
+export { showUserNameInNavbar, renderTopbarMenu, getAndShowAllCourses, getAndShowPopularCourses, getAndShowPresellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting, getCourseDetails, getAndShowRelatedCourses, getSessionDetails, submitContactUsMsg, createNewNewsLetter };

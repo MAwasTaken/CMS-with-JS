@@ -1,7 +1,11 @@
-import { showUserNameInNavbar, renderTopbarMenu, getAndShowMenus } from "./funcs/share.js";
+import { showUserNameInNavbar, renderTopbarMenu, getAndShowMenus, createNewNewsLetter } from "./funcs/share.js";
+
+const newsLetterSubmitBtn = document.querySelector("#news-letter-submit-btn");
 
 window.addEventListener("load", () => {
 	showUserNameInNavbar();
-  renderTopbarMenu();
-  getAndShowMenus();
+	renderTopbarMenu();
+	getAndShowMenus();
 });
+
+newsLetterSubmitBtn.addEventListener("click", () => createNewNewsLetter());

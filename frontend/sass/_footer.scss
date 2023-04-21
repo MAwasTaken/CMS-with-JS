@@ -14,6 +14,7 @@
 				font-size: 1.7rem;
 				font-weight: bold;
 				margin-bottom: 2rem;
+				margin-top: 2rem;
 				position: relative;
 
 				&::before {
@@ -57,6 +58,36 @@
 			z-index: -1;
 			border-radius: 5rem;
 		}
+
+		.footer-widgets__form {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-top: 2rem;
+		}
+
+		.footer-widgets__input {
+			height: 3.5rem;
+			border: 1px solid #b8b8b8;
+			border-radius: 0 0.3rem 0.3rem 0;
+			font-size: 1.3rem;
+			width: 100%;
+		}
+
+		.footer-widgets__btn {
+			border: none;
+			background-color: #7d7e7f;
+			border-radius: 0.3rem 0 0 0.3rem;
+			color: $white-color;
+			font-size: 1.2rem;
+			height: 3.5rem;
+			padding: 0 1rem;
+			transition: 300ms all ease;
+		}
+
+		.footer-widgets__btn:hover {
+			background-color: $primary-color;
+		}
 	}
 
 	.footer__copyright {
@@ -71,6 +102,11 @@
 			font-weight: bold;
 		}
 	}
+}
+
+.swal-button-container {
+	display: flex;
+	justify-content: center;
 }
 
 /* Finish Footer Styles */
