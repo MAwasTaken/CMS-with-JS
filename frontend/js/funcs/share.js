@@ -1,5 +1,5 @@
 import { getMe } from "./auth.js";
-import { isLogin, getUrlParam, getToken } from "./utils.js";
+import { isLogin, getUrlParam, getToken, showSwal } from "./utils.js";
 
 const showUserNameInNavbar = () => {
 	const isUserLogin = isLogin();
@@ -621,7 +621,13 @@ const submitContactUsMsg = async () => {
 	});
 
 	const result = await res.json();
-	console.log(res);
+
+	if (res.status === 201) {
+		showSwal("پیغام شما با موفقیت ارسال شد.", "success", "ورود به پنل", (result) => (location.href = "index.html"));
+	} else {
+		showSwal("مشکلی در ارسال پیغام وجود دارد! \nلطفا بعدا تست کنید", "error", "ای بابا :(", () => {});
+	}
+
 	console.log(result);
 };
 

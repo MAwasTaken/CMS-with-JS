@@ -535,3 +535,8 @@ html body i {
 }
 
 /*# sourceMappingURL=contact-us.css.map */
+
+.swal-button-container {
+  display: flex;
+  justify-content: center;
+}
