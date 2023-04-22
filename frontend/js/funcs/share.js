@@ -535,62 +535,68 @@ const getCourseDetails = () => {
 				);
 			}
 
-			course.comments.forEach((comment) => {
-				commentsContentWrapper.insertAdjacentHTML(
-					"beforeend",
-					`
-            <div class="comments__item">
-              <div class="comments__question">
-                  <div class="comments__question-header">
-                      <div class="comments__question-header-right">
-                          <span class="comments__question-name comment-name">${comment.creator.name}</span>
-                          <span class="comments__question-status comment-status">
-                          (${comment.creator.role === "USER" ? "دانشجو" : "مدرس"})
-                              </span>
-                          <span class="comments__question-date comment-date">${comment.createdAt.slice(0, 10)}</span>
-                      </div>
-                      <div class="comments__question-header-left">
-                          <a class="comments__question-header-link comment-link" href="#">پاسخ</a>
-                      </div>
-                  </div>
-                  <div class="comments__question-text">
-                     
-                      <p class="comments__question-paragraph comment-paragraph">
-                        ${comment.body}
-                      </p>
-                  </div>
-              </div>
-              ${
-								comment.answerContent
-									? `
-                    <div class="comments__ansewr">
-                        <div class="comments__ansewr-header">
-                            <div class="comments__ansewr-header-right">
-                                <span class="comments__ansewr-name comment-name">
-                               ${comment.answerContent.creator.name}
-                                    </span>
-                                <span class="comments__ansewr-staus comment-status">
-                                  (${comment.creator.role === "USER" ? "دانشجو" : "مدرس"})
+			if (course.comments.length)
+				course.comments.forEach((comment) => {
+					commentsContentWrapper.insertAdjacentHTML(
+						"beforeend",
+						`
+              <div class="comments__item">
+                <div class="comments__question">
+                    <div class="comments__question-header">
+                        <div class="comments__question-header-right">
+                            <span class="comments__question-name comment-name">${comment.creator.name}</span>
+                            <span class="comments__question-status comment-status">
+                            (${comment.creator.role === "USER" ? "دانشجو" : "مدرس"})
                                 </span>
-                                <span class="comments__ansewr-date comment-date">1401/04/21</span>
-                            </div>
-                            <div class="comments__ansewr-header-left">
-                                <a class="comments__ansewr-header-link comment-link" href="#">پاسخ</a>
-                            </div>
+                            <span class="comments__question-date comment-date">${comment.createdAt.slice(0, 10)}</span>
                         </div>
-                        <div class="comments__ansewr-text">
-                            <p class="comments__ansewr-paragraph comment-paragraph">
-                              ${comment.answerContent.body}
-                            </p>
+                        <div class="comments__question-header-left">
+                            <a class="comments__question-header-link comment-link" href="#">پاسخ</a>
                         </div>
                     </div>
-                  `
-									: ""
-							}
-            </div>
-        `
-				);
-			});
+                    <div class="comments__question-text">
+                       
+                        <p class="comments__question-paragraph comment-paragraph">
+                          ${comment.body}
+                        </p>
+                    </div>
+                </div>
+                ${
+									comment.answerContent
+										? `
+                      <div class="comments__ansewr">
+                          <div class="comments__ansewr-header">
+                              <div class="comments__ansewr-header-right">
+                                  <span class="comments__ansewr-name comment-name">
+                                 ${comment.answerContent.creator.name}
+                                      </span>
+                                  <span class="comments__ansewr-staus comment-status">
+                                    (${comment.creator.role === "USER" ? "دانشجو" : "مدرس"})
+                                  </span>
+                                  <span class="comments__ansewr-date comment-date">1401/04/21</span>
+                              </div>
+                              <div class="comments__ansewr-header-left">
+                                  <a class="comments__ansewr-header-link comment-link" href="#">پاسخ</a>
+                              </div>
+                          </div>
+                          <div class="comments__ansewr-text">
+                              <p class="comments__ansewr-paragraph comment-paragraph">
+                                ${comment.answerContent.body}
+                              </p>
+                          </div>
+                      </div>
+                    `
+										: ""
+								}
+              </div>
+          `
+					);
+				});
+			else {
+        commentsContentWrapper.insertAdjacentHTML('beforeend', `
+          <div class="alert alert-danger">هنوز هیچ کامنتی برای این دوره ثبت نشده!</div>
+        `)
+			}
 		});
 };
 
