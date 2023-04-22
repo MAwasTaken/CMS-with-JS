@@ -264,6 +264,7 @@ html body i {
   font-size: 1.7rem;
   font-weight: bold;
   margin-bottom: 2rem;
+  margin-top: 2rem;
   position: relative;
 }
 .footer .footer-widgets .footer-widget__item .footer-widget__title::before {
@@ -301,6 +302,32 @@ html body i {
   z-index: -1;
   border-radius: 5rem;
 }
+.footer .footer-widgets .footer-widgets__form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.footer .footer-widgets .footer-widgets__input {
+  height: 3.5rem;
+  border: 1px solid #b8b8b8;
+  border-radius: 0 0.3rem 0.3rem 0;
+  font-size: 1.3rem;
+  width: 100%;
+}
+.footer .footer-widgets .footer-widgets__btn {
+  border: none;
+  background-color: #7d7e7f;
+  border-radius: 0.3rem 0 0 0.3rem;
+  color: #fff;
+  font-size: 1.2rem;
+  height: 3.5rem;
+  padding: 0 1rem;
+  transition: 300ms all ease;
+}
+.footer .footer-widgets .footer-widgets__btn:hover {
+  background-color: #2bce56;
+}
 .footer .footer__copyright {
   display: flex;
   align-items: center;
@@ -311,6 +338,11 @@ html body i {
 .footer .footer__copyright .footer__copyright-text {
   color: #464749;
   font-weight: bold;
+}
+
+.swal-button-container {
+  display: flex;
+  justify-content: center;
 }
 
 /* Finish Footer Styles */
@@ -388,6 +420,17 @@ html body i {
 }
 
 /* Finish breadcrumb Styles */
+.courses-info {
+  top: 2rem;
+  position: sticky;
+}
+.courses-info .course-info {
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  padding: 2.2rem;
+  box-shadow: 0 0 13px 1px rgba(70, 72, 77, 0.08);
+  border: 1px solid #f2f2f2;
+}
 .courses-info .course-info .course-info__courses-title {
   font-size: 1.8rem;
   display: block;
@@ -410,6 +453,220 @@ html body i {
   margin-right: 0.5rem;
   color: #8d8d8d;
   font-weight: bold;
+  transition: all 400ms ease;
+}
+.courses-info .course-info .courses-info__courses-list-item .course-info__courses-link .course-info__courses-text:hover {
+  color: #1e83f0;
+}
+
+.comments {
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 13px 1px rgba(70, 72, 77, 0.08);
+  padding: 2rem 2.5rem;
+}
+
+.comments__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.comments__header-icon-content {
+  background-color: #2bce56;
+  color: #fff;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+}
+
+.comments__header-icon {
+  font-size: 2.5rem;
+}
+
+.comments__header-title {
+  margin-right: 1rem;
+}
+
+.comments__item {
+  background-color: #f9fafd;
+  border-radius: 1rem;
+  border: 1px dashed #ccc;
+  padding: 3rem;
+  margin-bottom: 3rem;
+}
+
+.comments__question-header,
+.comments__ansewr-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.comments__question-header-right,
+.comments__ansewr-header-right {
+  display: flex;
+  align-items: center;
+}
+
+.comment-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #464749;
+}
+
+.comment-status {
+  display: flex;
+  align-items: center;
+  background-color: #2bce56;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.5rem;
+  margin: 0 1rem;
+}
+
+.comment-date {
+  font-size: 1.5rem;
+  color: #adb5bd;
+}
+
+.comment-link {
+  font-size: 1.2rem;
+  color: #b1bbbf;
+  border: 1px solid #b1bbbf;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.3rem;
+  background-color: #fff;
+}
+
+.comments__question-text {
+  margin-top: 1rem;
+}
+
+.comment-paragraph {
+  font-size: 1.3rem;
+  color: #7d7e7f;
+}
+
+.comments__ansewr {
+  border: 1px dashed #ccc;
+  border-radius: 1rem;
+  padding: 3rem;
+}
+
+.comments__ansewr-staus {
+  background-color: #2196f3;
+}
+
+.comments__pagantion-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comments__pagantion-link {
+  border-radius: 0.5rem;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  background-color: #f0f0f1;
+  margin: 0 0.5rem;
+}
+
+.comments__pagantion-link:hover {
+  color: #fff;
+  background-color: #2bce56;
+}
+
+.comments__pagantion-link--active {
+  background-color: #2bce56;
+  color: #fff;
+}
+
+.comments__rules {
+  display: flex;
+  flex-direction: column;
+  margin-top: 6rem;
+}
+
+.comments__rules-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #464749;
+  margin-bottom: 1.5rem;
+}
+
+.comments__rules-item {
+  font-size: 1.2rem;
+  color: #7b868a;
+  margin-bottom: 0.5rem;
+}
+
+.comments__rules-icon {
+  color: #15cc79;
+  margin-left: 0.5rem;
+}
+
+.comments__respond {
+  background-color: #f0f2f7;
+  border-radius: 0.5rem;
+  padding: 3rem;
+}
+
+.comments__score-title {
+  font-size: 1.5rem;
+  color: #6c757d;
+}
+
+.comments__score-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 0.6rem 0.8rem 0.6rem 2rem;
+  margin: 0.5rem 0;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e5e5;
+  cursor: pointer;
+  color: #7d7e7f;
+  transition: all 400ms ease;
+}
+
+.comments__score-input:hover {
+  background-color: #1e83f0;
+  color: #fff;
+}
+
+.comments__respond-title {
+  font-size: 1.5rem;
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+}
+
+.comments__score-input-respond {
+  width: 100%;
+  height: 20rem;
+  outline: none;
+  border: none;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.5rem;
+}
+
+.comments__respond-btn {
+  background-color: #2bce56;
+  color: #fff;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 2rem;
+  margin-top: 2rem;
 }
 
 /* Start Course Info Styles */
@@ -654,17 +911,6 @@ html body i {
 
 /* Finish Teacher Details Styles */
 /* Start Sidebar Styles */
-.courses-info {
-  top: 2rem;
-  position: sticky;
-}
-.courses-info .course-info {
-  border-radius: 0.5rem;
-  margin-top: 1rem;
-  padding: 2.2rem;
-  box-shadow: 0 0 13px 1px rgba(70, 72, 77, 0.08);
-  border: 1px solid #f2f2f2;
-}
 .courses-info .course-info .course-info__register {
   text-align: center;
   background-color: #1fbd50;
