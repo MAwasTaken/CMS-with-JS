@@ -1,10 +1,12 @@
-import { getAndShowAllCourses, getAndShowArticles, getAndShowMenus, getAndShowPopularCourses, getAndShowPresellCourses } from "./funcs/share.js";
+import { getAndShowAllCourses, getAndShowArticles, getAndShowMenus, getAndShowPopularCourses, getAndShowPresellCourses, globalSearch } from "./funcs/share.js";
 
 const $ = document;
 const landingTitle = $.querySelector(".landing__title");
 const landingCoursesCount = $.querySelector("#courses-count");
 const landingMinutesCounter = $.querySelector("#minutes-counter");
 const landingUsersCount = $.querySelector("#users-counter");
+const globalSearchBtn = $.querySelector("#search-btn");
+const globalSearchInput = $.querySelector("#search-input");
 
 window.addEventListener("load", () => {
 	let landingText = "ما به هر قیمتی دوره آموزشی تولید نمی کنیم !";
@@ -19,6 +21,11 @@ window.addEventListener("load", () => {
 	getAndShowPopularCourses();
 	getAndShowPresellCourses();
 	getAndShowArticles();
+
+	globalSearchBtn.addEventListener("click", (event) => {
+		event.preventDefault();
+		location.href = `search.html?value=${globalSearchInput.value.trim()}`;
+	});
 });
 
 function typeWriter(text, index) {

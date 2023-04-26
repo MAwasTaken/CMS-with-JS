@@ -593,9 +593,12 @@ const getCourseDetails = () => {
 					);
 				});
 			else {
-        commentsContentWrapper.insertAdjacentHTML('beforeend', `
+				commentsContentWrapper.insertAdjacentHTML(
+					"beforeend",
+					`
           <div class="alert alert-danger">هنوز هیچ کامنتی برای این دوره ثبت نشده!</div>
-        `)
+        `
+				);
 			}
 		});
 };
@@ -710,4 +713,9 @@ const createNewNewsLetter = async () => {
 	if (res.ok) showSwal("با موفقیت در خبرنامه سبزلرن عضو شدید.", "success", "متوجه شدم", () => {});
 };
 
-export { showUserNameInNavbar, renderTopbarMenu, getAndShowAllCourses, getAndShowPopularCourses, getAndShowPresellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting, getCourseDetails, getAndShowRelatedCourses, getSessionDetails, submitContactUsMsg, createNewNewsLetter };
+const globalSearch = async () => {
+	const searchValue = getUrlParam("value");
+	console.log(searchValue);
+};
+
+export { showUserNameInNavbar, renderTopbarMenu, getAndShowAllCourses, getAndShowPopularCourses, getAndShowPresellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting, getCourseDetails, getAndShowRelatedCourses, getSessionDetails, submitContactUsMsg, createNewNewsLetter, globalSearch };

@@ -132,7 +132,7 @@
 						font-size: 1.4rem;
 						color: #6c757d;
 						cursor: pointer;
-                        user-select: none;
+						user-select: none;
 					}
 				}
 
@@ -149,45 +149,45 @@
 			}
 		}
 
-        .login__des {
-            margin-top: 3rem;
-            color: #7b868a;
-            font-size: 1.2rem;
-            width: 100%;
+		.login__des {
+			margin-top: 3rem;
+			color: #7b868a;
+			font-size: 1.2rem;
+			width: 100%;
 
-            .login__des-list {
-                list-style: disc;
-                margin-right: 2rem;
-                margin-top: 1rem;
-            }
-        }
+			.login__des-list {
+				list-style: disc;
+				margin-right: 2rem;
+				margin-top: 1rem;
+			}
+		}
 	}
 
-    &::before {
-        content: '';
-        position: absolute;
-        top: -5rem;
-        width: 150%;
-        height: 380px;
-        background-color: #2bce56;
-        z-index: -1;
-        transform: rotate(-4deg);
-    }
+	&::before {
+		content: "";
+		position: absolute;
+		top: -5rem;
+		width: 150%;
+		height: 380px;
+		background-color: #2bce56;
+		z-index: -1;
+		transform: rotate(-4deg);
+	}
 
-    &::after {
-        content: '';
-        position: absolute;
-        width: 150%;
-        height: 380px;
-        z-index: -99;
-        transform: rotate(-4deg);
-        background-color: rgba(43, 206, 86, 0.6);
-    }
+	&::after {
+		content: "";
+		position: absolute;
+		width: 150%;
+		height: 380px;
+		z-index: -99;
+		transform: rotate(-4deg);
+		background-color: rgba(43, 206, 86, 0.6);
+	}
 }
 
 .swal-button-container {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 // sass --watch sass/login.scss css/login.css
