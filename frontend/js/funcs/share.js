@@ -714,8 +714,82 @@ const createNewNewsLetter = async () => {
 };
 
 const globalSearch = async () => {
+	const coursesSearchResultWrapper = document.querySelector("#courses-container");
+	const articlesSearchResultWrapper = document.querySelector("#articles-wrapper");
 	const searchValue = getUrlParam("value");
 	console.log(searchValue);
+
+	const res = await fetch(`http://localhost:4000/v1/search/${searchValue}`);
+	const data = await res.json();
+	console.log(data);
+
+	data.allResultCourses.forEach((course) =>
+		coursesSearchResultWrapper.insertAdjacentHTML(
+			"beforeend",
+			`
+        <div class="col-4">
+        <div class="course-box">
+          <a href="course.html?name=${course.shortName}">
+            <img class="course-box__img" src=http://localhost:4000/courses/covers/${course.cover} alt="Course img" />
+          </a>
+          <div class="course-box__main">
+            <a class="course-box__title" href="course.html?name=${course.shortName}">${course.name}</a>
+            <div class="course-box__rating-teacher">
+              <div class="course-box__teacher">
+                <i class="fas fa-chalkboard-teacher course-box__teacher-icon"></i>
+                <a class="course-box__teacher-link" href="#"></a>
+              </div>
+              <div class="course-box__rating">
+              <img class="course-box__star" src="images/svgs/star_fill.svg" alt="rating" />
+              <img class="course-box__star" src="images/svgs/star_fill.svg" alt="rating" />
+              <img class="course-box__star" src="images/svgs/star_fill.svg" alt="rating" />
+              <img class="course-box__star" src="images/svgs/star_fill.svg" alt="rating" />
+              <img class="course-box__star" src="images/svgs/star_fill.svg" alt="rating" />
+              </div>
+            </div>
+            <div class="course-box__status">
+              <div class="course-box__users">
+                <i class="fas fa-users course-box__users-icon"></i>
+                <span class="course-box__users-text" href="#"></span>
+              </div>
+              <span class="course-box__price">${course.price === 0 ? "رایگان" : course.price.toLocaleString()}</span>
+            </div>
+          </div>
+          <div class="course-box__footer">
+            <a class="course-box__footer-link" href="#">
+              مشاهده اطلاعات
+              <i class="fas fa-arrow-left course-box__footer-icon"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    `
+		)
+	);
+
+	data.allResultArticles.forEach((article) =>
+		articlesSearchResultWrapper.insertAdjacentHTML(
+			"beforeend",
+			`
+    <div class="col-4">
+      <div class="article-card">
+        <div class="aricle-card__header">
+          <a class="article-card__link-img" href="#">
+            <img class="article-card__img" src=http://localhost:4000/courses/covers/${article.cover} alt="Article Cover" />
+          </a>
+        </div>
+        <div class="article-card__content">
+          <a href="#" class="article-card__link">${article.title}</a>
+          <p class="article-card__text">${article.description}</p>
+          <a href="#" class="article-card__btn">بیشتر بخوانید</a>
+        </div>
+      </div>
+    </div>
+    `
+		)
+	);
+
+	return data;
 };
 
 export { showUserNameInNavbar, renderTopbarMenu, getAndShowAllCourses, getAndShowPopularCourses, getAndShowPresellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting, getCourseDetails, getAndShowRelatedCourses, getSessionDetails, submitContactUsMsg, createNewNewsLetter, globalSearch };

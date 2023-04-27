@@ -7,6 +7,7 @@
 @import "default";
 @import "footer";
 @import "title";
+@import "course-box";
 
 .courses {
 	margin: 4rem 0;
@@ -136,4 +137,6 @@
 .title {
 	@extend %Title;
 }
+
+@include CourseBox($type: course);
 // sass --watch sass/search.scss css/search.css
