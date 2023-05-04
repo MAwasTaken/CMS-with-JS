@@ -450,7 +450,6 @@ const getCourseDetails = () => {
 	})
 		.then((res) => res.json())
 		.then((course) => {
-			console.log(course);
 			courseTitleElement.innerHTML = course.name;
 			courseDescriptionElement.innerHTML = course.description;
 			courseCategoryElement.innerHTML = course.categoryID.title;
@@ -716,13 +715,13 @@ const createNewNewsLetter = async () => {
 const globalSearch = async () => {
 	const coursesSearchResultWrapper = document.querySelector("#courses-container");
 	const articlesSearchResultWrapper = document.querySelector("#articles-wrapper");
-  
+
 	const searchValue = getUrlParam("value");
 
 	const res = await fetch(`http://localhost:4000/v1/search/${searchValue}`);
 	const data = await res.json();
 
-	if (data.allResultCourses.length)
+	if (data.allResultCourses.length) {
 		data.allResultCourses.forEach((course) =>
 			coursesSearchResultWrapper.insertAdjacentHTML(
 				"beforeend",
@@ -766,7 +765,7 @@ const globalSearch = async () => {
       `
 			)
 		);
-	else
+	} else
 		coursesSearchResultWrapper.insertAdjacentHTML(
 			"beforeend",
 			`
@@ -774,7 +773,7 @@ const globalSearch = async () => {
     `
 		);
 
-	if (data.allResultCourses.length)
+	if (data.allResultArticles.length) {
 		data.allResultArticles.forEach((article) =>
 			articlesSearchResultWrapper.insertAdjacentHTML(
 				"beforeend",
@@ -796,15 +795,44 @@ const globalSearch = async () => {
       `
 			)
 		);
-	else
+	} else {
 		articlesSearchResultWrapper.insertAdjacentHTML(
 			"beforeend",
 			`
     <div class="alert alert-danger">هیچ مقاله‌ای برای جستجوی شما وجود ندارد!</div>
   `
 		);
-
+	}
 	return data;
 };
 
-export { showUserNameInNavbar, renderTopbarMenu, getAndShowAllCourses, getAndShowPopularCourses, getAndShowPresellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting, getCourseDetails, getAndShowRelatedCourses, getSessionDetails, submitContactUsMsg, createNewNewsLetter, globalSearch };
+const submitComment = async () => {
+	const commentTextareaElement = document.querySelector(".comments__score-input-respond");
+	const commentScoreElement = document.querySelector("#comment-score");
+
+	let score = 5;
+	let courseShortName = getUrlParam("name");
+
+	commentScoreElement.addEventListener("change", (event) => (score = event.target.value));
+
+	const newCommentInfos = {
+		body: commentTextareaElement.value.trim(),
+		courseShortName,
+		score,
+	};
+
+	const res = await fetch(`http://localhost:4000/v1/comments`, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+			Authorization: `Bearer ${getToken()}`,
+		},
+		body: JSON.stringify(newCommentInfos),
+	});
+
+	console.log(res);
+
+	if (res.ok) showSwal("کامنت شما با موفقیت ثبت شد!", "success", "خیلی هم عالی", () => {});
+};
+
+export { showUserNameInNavbar, renderTopbarMenu, getAndShowAllCourses, getAndShowPopularCourses, getAndShowPresellCourses, getAndShowArticles, getAndShowMenus, getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting, getCourseDetails, getAndShowRelatedCourses, getSessionDetails, submitContactUsMsg, createNewNewsLetter, globalSearch, submitComment };
