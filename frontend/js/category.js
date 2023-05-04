@@ -1,5 +1,5 @@
 import { getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting } from "./funcs/share.js";
-import { searchInArray } from "./funcs/utils.js";
+import { searchInArray, paginateItems } from "./funcs/utils.js";
 
 window.addEventListener("load", () => {
 	getAndShowCategoryCourses().then((responseCourses) => {
@@ -78,5 +78,10 @@ window.addEventListener("load", () => {
 				);
 			}
 		});
+
+		// handle pagination
+		const coursePaginationWrapper = document.querySelector(".courses-pagination-list");
+
+		console.log(paginateItems([...responseCourses], 3, categoryCoursesWrapper, 1));
 	});
 });

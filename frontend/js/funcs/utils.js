@@ -34,4 +34,28 @@ const searchInArray = (array, searchProperty, searchValue) => {
 	return outputArray;
 };
 
-export { showSwal, saveIntoLocalStorage, getFromLocalStorage, getToken, isLogin, getUrlParam, searchInArray };
+const paginateItems = (array, itemsPerPage, paginateParentElem, currentPage) => {
+	paginateParentElem.innerHTML = "";
+
+	let endIndex = itemsPerPage * currentPage;
+	let startIndex = endIndex - itemsPerPage;
+
+	let paginatedCount = Math.ceil(array.lengh / itemsPerPage);
+
+	let paginatedItems = array.slice(startIndex, endIndex);
+
+	for (let i = 0; i < paginatedCount + 1; i++) {
+		paginateParentElem.insertAdjacentHTML(
+			"beforeend",
+			`
+        <li class="courses__pagination-item">
+          <a href="#" class="courses__pagination-link"> ${i} </a>
+        </li>
+      `
+		);
+	}
+
+  return paginatedItems;
+};
+
+export { showSwal, saveIntoLocalStorage, getFromLocalStorage, getToken, isLogin, getUrlParam, searchInArray, paginateItems };
