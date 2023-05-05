@@ -49,13 +49,25 @@ const paginateItems = (array, itemsPerPage, paginateParentElem, currentPage) => 
 			"beforeend",
 			`
         <li class="courses__pagination-item">
-          <a href="#" class="courses__pagination-link"> ${i} </a>
+        ${
+					i === Number(currentPage)
+						? `
+          <a onclick="addParamToUrl('page', ${i})" class="courses__pagination-link courses__pagination-link-active"> ${i} </a>
+        `
+						: `
+          <a onclick="addParamToUrl('page', ${i})" class="courses__pagination-link"> ${i} </a>
+        `
+				}
         </li>
       `
 		);
 	}
 
-  return paginatedItems;
+	const addParamToUrl = (param, value) => {
+		console.log(param, value);
+	};
+
+	return paginatedItems;
 };
 
-export { showSwal, saveIntoLocalStorage, getFromLocalStorage, getToken, isLogin, getUrlParam, searchInArray, paginateItems };
+export { showSwal, saveIntoLocalStorage, getFromLocalStorage, getToken, isLogin, getUrlParam, searchInArray, paginateItems, addParamToUrl };

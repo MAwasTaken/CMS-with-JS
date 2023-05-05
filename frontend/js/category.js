@@ -1,5 +1,5 @@
 import { getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting } from "./funcs/share.js";
-import { searchInArray, paginateItems, getUrlParam } from "./funcs/utils.js";
+import { searchInArray, paginateItems, getUrlParam, addParamToUrl } from "./funcs/utils.js";
 
 window.addEventListener("load", () => {
 	getAndShowCategoryCourses().then((responseCourses) => {
@@ -84,7 +84,7 @@ window.addEventListener("load", () => {
 
 		const currentPage = getUrlParam("page");
 
-		const shownCourses = paginateItems([...responseCourses], 3, categoryCoursesWrapper, currentPage);
+		const shownCourses = paginateItems([...responseCourses], 3, coursePaginationWrapper, currentPage);
 		insertCourseBoxHtmlTemplate([...shownCourses], coursesShowType, categoryCoursesWrapper);
 	});
 });
