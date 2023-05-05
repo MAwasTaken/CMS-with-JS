@@ -248,7 +248,7 @@ const getAndShowMenus = async () => {
 			"beforeend",
 			`
       <li class="main-header__item">
-        <a href=category.html?cat=${menu.href} class="main-header__link">${menu.title}
+        <a href=category.html?cat=${menu.href}&page=1 class="main-header__link">${menu.title}
           ${
 						menu.submenus.length !== 0
 							? `
@@ -284,7 +284,7 @@ const getAndShowCategoryCourses = async () => {
 	const res = await fetch(`http://localhost:4000/v1/courses/category/${categoryName}`);
 	const courses = await res.json();
 
-	// bakend brokedown
+	// backend brokedown
 	return [];
 };
 
