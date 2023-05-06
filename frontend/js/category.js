@@ -1,6 +1,8 @@
 import { getAndShowCategoryCourses, insertCourseBoxHtmlTemplate, coursesSorting } from "./funcs/share.js";
 import { searchInArray, paginateItems, getUrlParam, addParamToUrl } from "./funcs/utils.js";
 
+window.addParamToUrl = addParamToUrl;
+
 window.addEventListener("load", () => {
 	getAndShowCategoryCourses().then((responseCourses) => {
 		let courses = [...responseCourses];

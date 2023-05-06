@@ -63,11 +63,18 @@ const paginateItems = (array, itemsPerPage, paginateParentElem, currentPage) => 
 		);
 	}
 
-	const addParamToUrl = (param, value) => {
-		console.log(param, value);
-	};
-
 	return paginatedItems;
+};
+
+const addParamToUrl = (param, value) => {
+	let url = new URL(location.href);
+	let searchParams = url.searchParams;
+
+	searchParams.set(param, value);
+
+	url.search = searchParams.toString();
+
+	location.href = url.toString();
 };
 
 export { showSwal, saveIntoLocalStorage, getFromLocalStorage, getToken, isLogin, getUrlParam, searchInArray, paginateItems, addParamToUrl };
