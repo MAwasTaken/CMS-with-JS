@@ -40,11 +40,11 @@ const paginateItems = (array, itemsPerPage, paginateParentElem, currentPage) => 
 	let endIndex = itemsPerPage * currentPage;
 	let startIndex = endIndex - itemsPerPage;
 
-	let paginatedCount = Math.ceil(array.lengh / itemsPerPage);
+	let paginatedCount = Math.ceil(array.length / itemsPerPage);
 
 	let paginatedItems = array.slice(startIndex, endIndex);
 
-	for (let i = 0; i < paginatedCount + 1; i++) {
+	for (let i = 1; i < paginatedCount + 1; i++) {
 		paginateParentElem.insertAdjacentHTML(
 			"beforeend",
 			`
