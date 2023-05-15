@@ -7,8 +7,12 @@ window.addEventListener("load", () => {
 	const adminNameElem = $.querySelector("#admin-name");
 
 	getAdminInfos().then((admin) => {
-		console.log(admin);
-		adminWelcomeNameElem.innerHTML = admin.name;
-		adminNameElem.innerHTML = admin.name;
+		// protect panel route
+		if (admin.role === "ADMIN") {
+			// show admin name in panel
+			console.log(admin);
+			adminWelcomeNameElem.innerHTML = admin.name;
+			adminNameElem.innerHTML = admin.name;
+		} else location.replace("../../login.html");
 	});
 });
