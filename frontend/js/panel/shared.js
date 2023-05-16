@@ -1,6 +1,9 @@
 import { getAdminInfos } from "./funcs/utils.js";
+import { insertNotificationHtmlTemplate, seenNotification } from "./funcs/notifications.js";
 
 const $ = document;
+
+window.seenNotification = seenNotification;
 
 window.addEventListener("load", () => {
 	const adminWelcomeNameElem = $.querySelector("#admin-welcome-name");
@@ -13,7 +16,6 @@ window.addEventListener("load", () => {
 		// protect panel route
 		if (admin.role === "ADMIN") {
 			// show admin name in panel
-			console.log(admin);
 			adminWelcomeNameElem.innerHTML = admin.name;
 			adminNameElem.innerHTML = admin.name;
 		} else location.replace("../../login.html");
@@ -26,20 +28,6 @@ window.addEventListener("load", () => {
 			notifactionsBoxElem.classList.remove("active-modal-notfication");
 		});
 
-		if (admin.notifications.length) {
-			admin.notifications.forEach((notification) => {
-				notificationModalList.insertAdjacentHTML(
-					"beforeend",
-					`
-          <li class="home-notification-modal-item">
-            <span class="home-notification-modal-text">${notification.msg}</span>
-            <a href="">دیدم</a>
-          </li>
-        `
-				);
-			});
-		} else {
-
-		}
+		insertNotificationHtmlTemplate(admin.notifications);
 	});
 });
