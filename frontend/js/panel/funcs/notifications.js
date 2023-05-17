@@ -4,13 +4,14 @@ const insertNotificationHtmlTemplate = (notifications) => {
 	const notificationModalListElem = document.querySelector(".home-notification-modal-list");
 
 	if (notifications.length) {
+		notificationModalListElem.innerHTML = "";
 		notifications.forEach((notification) => {
 			notificationModalListElem.insertAdjacentHTML(
 				"beforeend",
 				`
         <li class="home-notification-modal-item">
           <span class="home-notification-modal-text">${notification.msg}</span>
-          <a href="#" onclick="seenNotification('${notification._id}')">دیدم</a>
+          <a href="#" onclick='seenNotification(${JSON.stringify(notifications)}, ${JSON.stringify(notification._id)})'>دیدم</a>
         </li>
       `
 			);
@@ -27,7 +28,7 @@ const insertNotificationHtmlTemplate = (notifications) => {
 	}
 };
 
-const seenNotification = async (notificationID) => {
+const seenNotification = async (notifications, notificationID) => {
 	const res = await fetch(`http://localhost:4000/v1/notifications/see/${notificationID}`, {
 		method: "PUT",
 		headers: {
@@ -35,7 +36,15 @@ const seenNotification = async (notificationID) => {
 		},
 	});
 
+	removeNotification(notifications, notificationID);
+
 	const result = await res.json();
+};
+
+const removeNotification = (notifications, notificationID) => {
+	const filteredNotifications = notifications.filter((notification) => notification._id !== notificationID);
+
+	insertNotificationHtmlTemplate(filteredNotifications);
 };
 
 export { insertNotificationHtmlTemplate, seenNotification };
