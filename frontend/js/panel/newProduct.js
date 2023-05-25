@@ -1,5 +1,13 @@
-import { createNewCourse } from "./funcs/courses.js";
+import { createNewCourse, prepareCreateCourseForm } from "./funcs/courses.js";
 
 window.addEventListener("load", () => {
-  createNewCourse()
+	prepareCreateCourseForm();
+});
+
+const createCourseBtn = document.querySelector("#create-course-btn");
+
+createCourseBtn.addEventListener("click", (event) => {
+	event.preventDefault();
+
+	createNewCourse();
 });

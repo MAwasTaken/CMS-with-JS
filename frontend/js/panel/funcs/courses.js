@@ -36,10 +36,15 @@ const getAllCourses = async () => {
 	return courses;
 };
 
-const createNewCourse = async () => {
-	const categoryListElem = document.querySelector(".category-list");
+let categoryID = -1;
+let status = "start";
+let courseCover = null;
 
-	let categoryID = -1;
+const prepareCreateCourseForm = async () => {
+	const categoryListElem = document.querySelector(".category-list");
+	const courseStatusPresellElem = document.querySelector("#presell");
+	const courseStatusStartElem = document.querySelector("#start");
+	const courseCoverElem = document.querySelector("#course-cover");
 
 	const res = await fetch(`http://localhost:4000/v1/category`);
 	const categories = await res.json();
@@ -59,6 +64,33 @@ const createNewCourse = async () => {
 		categoryID = event.target.value;
 		console.log(categoryID);
 	});
+
+	courseStatusPresellElem.addEventListener("change", (event) => (status = event.target.value));
+
+	courseStatusStartElem.addEventListener("change", (event) => (status = event.target.value));
+
+	courseCoverElem.addEventListener("change", (event) => {
+		console.log(event.target.files);
+	});
 };
 
-export { getAllCourses, createNewCourse };
+const createNewCourse = async () => {
+	const courseNameElem = document.querySelector("#course-name");
+	const coursePriceElem = document.querySelector("#course-price");
+	const courseDescriptionElem = document.querySelector("#course-description");
+	const courseShortNameElem = document.querySelector("#course-shortname");
+	const courseSupportElem = document.querySelector("#course-support");
+
+	const formData = new FormData();
+
+	formData.append("name", courseNameElem.value.trim());
+	formData.append("price", coursePriceElem.value.trim());
+	formData.append("description", courseDescriptionElem.value.trim());
+	formData.append("shortName", courseShortNameElem.value.trim());
+	formData.append("support", courseSupportElem.value.trim());
+	formData.append("caegoryID", categoryID);
+	formData.append("status", status);
+	formData.append("cover", courseCover);
+};
+
+export { getAllCourses, createNewCourse, prepareCreateCourseForm };
