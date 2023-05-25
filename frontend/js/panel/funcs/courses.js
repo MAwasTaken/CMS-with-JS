@@ -1,3 +1,5 @@
+import {getToken} from "./../../funcs/utils.js";
+
 const getAllCourses = async () => {
 	const coursesTableElem = document.querySelector(".table");
 
@@ -69,9 +71,7 @@ const prepareCreateCourseForm = async () => {
 
 	courseStatusStartElem.addEventListener("change", (event) => (status = event.target.value));
 
-	courseCoverElem.addEventListener("change", (event) => {
-		console.log(event.target.files);
-	});
+	courseCoverElem.addEventListener("change", (event) => (courseCover = event.target.files[0]));
 };
 
 const createNewCourse = async () => {
@@ -88,9 +88,19 @@ const createNewCourse = async () => {
 	formData.append("description", courseDescriptionElem.value.trim());
 	formData.append("shortName", courseShortNameElem.value.trim());
 	formData.append("support", courseSupportElem.value.trim());
-	formData.append("caegoryID", categoryID);
+	formData.append("categoryID", categoryID);
 	formData.append("status", status);
 	formData.append("cover", courseCover);
+
+	const res = await fetch(`http://localhost:4000/v1/courses`, {
+		method: "POST",
+		headers: {
+			Authorization: `Bearer ${getToken()}`,
+		},
+		body: formData,
+	});
+
+  console.log(res.json());
 };
 
 export { getAllCourses, createNewCourse, prepareCreateCourseForm };
