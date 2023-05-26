@@ -1,4 +1,4 @@
-import {getToken} from "./../../funcs/utils.js";
+import { getToken, showSwal } from "./../../funcs/utils.js";
 
 const getAllCourses = async () => {
 	const coursesTableElem = document.querySelector(".table");
@@ -51,8 +51,6 @@ const prepareCreateCourseForm = async () => {
 	const res = await fetch(`http://localhost:4000/v1/category`);
 	const categories = await res.json();
 
-	console.log(categories);
-
 	categories.forEach((category) => {
 		categoryListElem.insertAdjacentHTML(
 			"beforeend",
@@ -64,7 +62,6 @@ const prepareCreateCourseForm = async () => {
 
 	categoryListElem.addEventListener("change", (event) => {
 		categoryID = event.target.value;
-		console.log(categoryID);
 	});
 
 	courseStatusPresellElem.addEventListener("change", (event) => (status = event.target.value));
@@ -100,7 +97,7 @@ const createNewCourse = async () => {
 		body: formData,
 	});
 
-  console.log(res.json());
+	if (res.ok) showSwal("دوره با موفقیت اضافه شد!", "success", "خیلی هم عالی", () => (location.href = "panel/D-Products/index.html"));
 };
 
 export { getAllCourses, createNewCourse, prepareCreateCourseForm };

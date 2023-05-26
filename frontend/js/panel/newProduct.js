@@ -6,6 +6,7 @@ window.addEventListener("load", () => {
 
 const createCourseBtn = document.querySelector("#create-course-btn");
 
+
 createCourseBtn.addEventListener("click", (event) => {
 	event.preventDefault();
 
