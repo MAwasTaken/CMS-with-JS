@@ -7,6 +7,8 @@ const getAllCourses = async () => {
 
 	const courses = await res.json();
 
+	coursesTableElem.innerHTML = "";
+
 	courses.forEach((course, index) => {
 		coursesTableElem.insertAdjacentHTML(
 			"beforeend",
@@ -28,7 +30,7 @@ const getAllCourses = async () => {
 					<button type="button" class="btn btn-primary" id="edit-btn">ویرایش</button>
 				</td>
 				<td>
-					<button type="button" class="btn btn-danger" id="delete-btn">حذف</button>
+					<button type="button" class="btn btn-danger" id="delete-btn" onclick="deleteCourse('${course._id}')">حذف</button>
 				</td>
 			</tr>
     `
@@ -100,4 +102,21 @@ const createNewCourse = async () => {
 	if (res.ok) showSwal("دوره با موفقیت اضافه شد!", "success", "خیلی هم عالی", () => (location.href = "panel/D-Products/index.html"));
 };
 
-export { getAllCourses, createNewCourse, prepareCreateCourseForm };
+const deleteCourse = async (courseID) => {
+	showSwal("آیا از حذف دوره اطمینان دارید ؟", "warning", ["نه", "آره"], async (result) => {
+		if (result) {
+			const res = await fetch(`http://localhost:4000/v1/courses/${courseID}`, {
+				method: "DELETE",
+				headers: {
+					Authorization: `Bearer ${getToken()}`,
+				},
+			});
+
+			if (res.ok) {
+				showSwal("دوره با موفقیت حذف شد!", "success", "باشه!", () => getAllCourses());
+			}
+		}
+	});
+};
+
+export { getAllCourses, createNewCourse, prepareCreateCourseForm, deleteCourse };
