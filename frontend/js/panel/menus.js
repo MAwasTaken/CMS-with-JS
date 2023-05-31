@@ -1,5 +1,14 @@
-import { getAndShowAllMenus } from './funcs/menus.js';
+import { createNewMenu, getAndShowAllMenus, prepareCreateMenuForm } from './funcs/menus.js';
 
 window.addEventListener('load', () => {
-	getAndShowAllMenus().then((data) => console.log(data));
+	const createMenuBtn = document.querySelector('#create-menu-btn');
+
+	prepareCreateMenuForm();
+	getAndShowAllMenus();
+
+	createMenuBtn.addEventListener('click', (event) => {
+		event.preventDefault();
+
+		createNewMenu();
+	});
 });

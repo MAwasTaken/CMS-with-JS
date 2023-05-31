@@ -1,8 +1,11 @@
+import { getToken } from '../../funcs/utils.js';
+
 const getAndShowAllMenus = async () => {
 	const menusWrapperElem = document.querySelector('.table tbody');
 
 	const res = await fetch(`http://localhost:4000/v1/menus/all`);
-	const menus = await res.json();
+	const allMenus = await res.json();
+	const menus = allMenus.reverse();
 
 	menus.forEach((menu, index) => {
 		menusWrapperElem.insertAdjacentHTML(
@@ -31,4 +34,44 @@ const getAndShowAllMenus = async () => {
 	return menus;
 };
 
-export { getAndShowAllMenus };
+let parentMenuID = undefined;
+
+const prepareCreateMenuForm = async () => {
+	const parentMenusElem = document.querySelector('#parent-menus');
+
+	parentMenusElem.addEventListener('change', (event) => (parentMenuID = event.target.value));
+
+	const res = await fetch(`http://localhost:4000/v1/menus`);
+	const menus = await res.json();
+
+	menus.forEach((menu) => {
+		parentMenusElem.insertAdjacentHTML(
+			'beforeend',
+			`
+      <option value=${menu._id}>${menu.title}</option>
+    `
+		);
+	});
+};
+
+const createNewMenu = async () => {
+	const titleInputElem = document.querySelector('#title');
+	const hrefInputElem = document.querySelector('#href');
+
+	const newMenuInfos = {
+		title: titleInputElem.value.trim(),
+		href: hrefInputElem.value.trim(),
+		parent: parentMenuID,
+	};
+
+	const res = await fetch(`http://localhost:4000/v1/menus`, {
+		method: 'POST',
+		headers: {
+			Authorization: `Bearer ${getToken()}`,
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify(newMenuInfos),
+	});
+};
+
+export { getAndShowAllMenus, prepareCreateMenuForm, createNewMenu };
