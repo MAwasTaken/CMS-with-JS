@@ -1,4 +1,4 @@
-import { getToken } from '../../funcs/utils.js';
+import { getToken, showSwal } from '../../funcs/utils.js';
 
 const getAndShowAllMenus = async () => {
 	const menusWrapperElem = document.querySelector('.table tbody');
@@ -72,6 +72,8 @@ const createNewMenu = async () => {
 		},
 		body: JSON.stringify(newMenuInfos),
 	});
+
+	if (res.ok) showSwal('منو با موفقیت اضافه شد!', 'success', 'عالی شد!', () => getAndShowAllMenus());
 };
 
 export { getAndShowAllMenus, prepareCreateMenuForm, createNewMenu };

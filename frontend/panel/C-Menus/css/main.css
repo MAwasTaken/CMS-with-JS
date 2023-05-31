@@ -623,3 +623,9 @@ ul {
 .active-modal-notfication {
     display: block !important;
 }
+
+.swal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
