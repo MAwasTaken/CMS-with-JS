@@ -1,4 +1,11 @@
-import { createNewMenu, getAndShowAllMenus, prepareCreateMenuForm } from './funcs/menus.js';
+import {
+	createNewMenu,
+	getAndShowAllMenus,
+	prepareCreateMenuForm,
+	removeMenu,
+} from './funcs/menus.js';
+
+window.removeMenu = removeMenu;
 
 window.addEventListener('load', () => {
 	const createMenuBtn = document.querySelector('#create-menu-btn');

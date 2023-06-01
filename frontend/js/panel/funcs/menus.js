@@ -7,6 +7,8 @@ const getAndShowAllMenus = async () => {
 	const allMenus = await res.json();
 	const menus = allMenus.reverse();
 
+	menusWrapperElem.innerHTML = '';
+
 	menus.forEach((menu, index) => {
 		menusWrapperElem.insertAdjacentHTML(
 			'beforeend',
@@ -22,7 +24,7 @@ const getAndShowAllMenus = async () => {
         </button>
       </td>
       <td>
-        <button type="button" class="btn btn-danger delete-btn">
+        <button type="button" class="btn btn-danger delete-btn" onClick='removeMenu("${menu._id}")'>
           حذف
         </button>
       </td>
@@ -73,7 +75,27 @@ const createNewMenu = async () => {
 		body: JSON.stringify(newMenuInfos),
 	});
 
-	if (res.ok) showSwal('منو با موفقیت اضافه شد!', 'success', 'عالی شد!', () => getAndShowAllMenus());
+	if (res.ok)
+		showSwal('منو با موفقیت اضافه شد!', 'success', 'عالی شد!', () => getAndShowAllMenus());
 };
 
-export { getAndShowAllMenus, prepareCreateMenuForm, createNewMenu };
+const removeMenu = async (menuID) => {
+	showSwal('آیا از حذف منو اطمینان دارید ؟', 'warning', ['نه', 'آره'], async (result) => {
+		if (result) {
+			const res = await fetch(`http://localhost:4000/v1/menus/${menuID}`, {
+				method: 'DELETE',
+				headers: {
+					Authorization: `Bearer ${getToken()}`,
+				},
+			});
+			console.log(res);
+
+			if (res.ok)
+				showSwal('منوی مورد نظر با موفقیت حذف شد!', 'success', 'باشه!', () => {
+					getAndShowAllMenus();
+				});
+		}
+	});
+};
+
+export { getAndShowAllMenus, prepareCreateMenuForm, createNewMenu, removeMenu };
