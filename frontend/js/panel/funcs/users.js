@@ -1,4 +1,4 @@
-import { getToken } from '../../funcs/utils.js';
+import { getToken, showSwal } from '../../funcs/utils.js';
 
 const getAndShowAllUsers = async () => {
 	const usersListTableElm = document.querySelector('.table tbody');
@@ -12,8 +12,8 @@ const getAndShowAllUsers = async () => {
 	});
 
 	const fetchedUsers = await res.json();
-  
-  const users = fetchedUsers.reverse()
+
+	const users = fetchedUsers.reverse();
 
 	users.forEach((user, index) => {
 		usersListTableElm.insertAdjacentHTML(
@@ -25,7 +25,7 @@ const getAndShowAllUsers = async () => {
         <td>${user.username}</td>
         <td>${user.phone}</td>
         <td>${user.email}</td>
-        <td>${user.role === 'ADMIN' ? "مدیر" : "کاربر عادی"}</td>
+        <td>${user.role === 'ADMIN' ? 'مدیر' : 'کاربر عادی'}</td>
         <td>
           <button
             type="button"
@@ -36,7 +36,9 @@ const getAndShowAllUsers = async () => {
         <td>
           <button
             type="button"
-            class="btn btn-danger delete-btn">
+            class="btn btn-danger delete-btn"
+            onClick="removeUser('${user._id}')"
+            >
             حذف
           </button>
         </td>
@@ -44,7 +46,7 @@ const getAndShowAllUsers = async () => {
           <button
             type="button"
             class="btn btn-warning delete-btn text-white">
-            حذف
+            بن
           </button>
         </td>
     </tr>
@@ -53,4 +55,20 @@ const getAndShowAllUsers = async () => {
 	});
 };
 
-export { getAndShowAllUsers };
+const removeUser = async (userID) => {
+	showSwal('آیا از حذف کاربر اطمینان داربد ؟', 'warning', ['نه', 'آره'], async (result) => {
+		if (result) {
+			const res = await fetch(`http://localhost:4000/v1/users/${userID}`, {
+				method: 'DELETE',
+				headers: {
+					Authorization: `Bearer ${getToken()}`,
+				},
+			});
+
+			if (res.ok)
+				showSwal('کاربر با موفقیت حذف شد!', 'success', 'باشه', () => getAndShowAllUsers());
+		}
+	});
+};
+
+export { getAndShowAllUsers, removeUser };
