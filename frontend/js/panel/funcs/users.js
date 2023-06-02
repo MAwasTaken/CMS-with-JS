@@ -45,7 +45,9 @@ const getAndShowAllUsers = async () => {
         <td>
           <button
             type="button"
-            class="btn btn-warning delete-btn text-white">
+            class="btn btn-warning delete-btn text-white"
+            onClick="banUser('${user._id}')"
+            >
             بن
           </button>
         </td>
@@ -71,4 +73,19 @@ const removeUser = async (userID) => {
 	});
 };
 
-export { getAndShowAllUsers, removeUser };
+const banUser = async (userID) => {
+	showSwal('آیا از بن کردن کاربر اطمینان داربد ؟', 'warning', ['نه', 'آره'], async (result) => {
+		if (result) {
+			const res = await fetch(`http://localhost:4000/v1/users/ban/${userID}`, {
+				method: 'PUT',
+				headers: {
+					Authorization: `Bearer ${getToken()}`,
+				},
+			});
+
+			if (res.ok) showSwal('کاربر با موفقیت بن شد!', 'success', 'باشه', () => removeUser(userID));
+		}
+	});
+};
+
+export { getAndShowAllUsers, removeUser, banUser };
