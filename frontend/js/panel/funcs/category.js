@@ -1,3 +1,5 @@
+import { getToken, showSwal } from '../../funcs/utils.js';
+
 const getAndShowAllCategories = async () => {
 	const categoriesListElem = document.querySelector('.table tbody');
 
@@ -18,7 +20,9 @@ const getAndShowAllCategories = async () => {
           <button type='button' class='btn btn-primary edit-btn'>ویرایش</button>
         </td>
         <td>
-          <button type='button' onclick="removeCategory('${category._id}')" class='btn btn-danger delete-btn'>حذف</button>
+          <button type='button' onclick="removeCategory('${
+						category._id
+					}')" class='btn btn-danger delete-btn'>حذف</button>
         </td>
       </tr>
     `
@@ -26,4 +30,28 @@ const getAndShowAllCategories = async () => {
 	});
 };
 
-export { getAndShowAllCategories };
+const createCategory = async () => {
+	const nameInputElem = document.querySelector('#name');
+	const titleInputElem = document.querySelector('#title');
+
+	const newCategoryInfos = {
+		title: titleInputElem.value.trim(),
+		name: nameInputElem.value.trim(),
+	};
+
+	const res = await fetch(`http://localhost:4000/v1/category`, {
+		method: 'POST',
+		headers: {
+			Authorization: `Bearer ${getToken()}`,
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify(newCategoryInfos),
+	});
+
+	if (res.ok)
+		showSwal('دسته بندی جدید با موفقیت اضافه شد!', 'success', 'خب', () =>
+			getAndShowAllCategories()
+		);
+};
+
+export { getAndShowAllCategories, createCategory };
