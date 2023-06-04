@@ -1,4 +1,6 @@
-import { createCategory, getAndShowAllCategories } from './funcs/category.js';
+import { createCategory, getAndShowAllCategories, removeCategory } from './funcs/category.js';
+
+window.removeCategory = removeCategory;
 
 window.addEventListener('load', () => {
 	const newCategoryBtn = document.querySelector('#create-category');
@@ -8,6 +10,6 @@ window.addEventListener('load', () => {
 	newCategoryBtn.addEventListener('click', (event) => {
 		event.preventDefault();
 
-		createCategory()
+		createCategory();
 	});
 });

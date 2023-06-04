@@ -35,8 +35,8 @@ const createCategory = async () => {
 	const titleInputElem = document.querySelector('#title');
 
 	const newCategoryInfos = {
-		title: titleInputElem.value.trim(),
-		name: nameInputElem.value.trim(),
+		title: nameInputElem.value.trim(),
+		name: titleInputElem.value.trim(),
 	};
 
 	const res = await fetch(`http://localhost:4000/v1/category`, {
@@ -54,4 +54,20 @@ const createCategory = async () => {
 		);
 };
 
-export { getAndShowAllCategories, createCategory };
+const removeCategory = async (categoryID) => {
+	showSwal('آیا از حذف دسته بندی اطمینان دارید ؟', 'warning', ['خیر', 'بله'], async (result) => {
+		if (result) {
+			const res = await fetch(`http://localhost:4000/v1/category/${categoryID}`, {
+				method: 'DELETE',
+				headers: {
+					Authorization: `Bearer ${getToken()}`,
+				},
+			});
+
+			if (res.ok)
+				showSwal('دسته بندی با موفقیت حذف شد!', 'success', 'عالی', () => getAndShowAllCategories());
+		}
+	});
+};
+
+export { getAndShowAllCategories, createCategory, removeCategory };
