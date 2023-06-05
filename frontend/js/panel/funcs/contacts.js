@@ -1,3 +1,5 @@
+import { showSwal } from '../../funcs/utils.js';
+
 const getAndShowAllContacts = async () => {
 	const contactsListTableElem = document.querySelector('.table tbody');
 
@@ -17,7 +19,9 @@ const getAndShowAllContacts = async () => {
           <td>${contact.phone}</td>
           <td>${contact.createdAt.slice(0, 10)}</td>
           <td>
-            <button type="button" class="btn btn-primary edit-btn">مشاهده</button>
+            <button type="button" class="btn btn-primary edit-btn" onClick="showContactBody('${
+							contact.body
+						}')">مشاهده</button>
           </td>
           <td>
             <button type="button" class="btn btn-warning text-white edit-btn">ویرایش</button>
@@ -31,8 +35,8 @@ const getAndShowAllContacts = async () => {
       `
 		)
 	);
-
-	console.log(contacts);
 };
 
-export { getAndShowAllContacts };
+const showContactBody = (contactBody) => showSwal(contactBody, undefined, 'مشاهده شد', () => {});
+
+export { getAndShowAllContacts, showContactBody };
